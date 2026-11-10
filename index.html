@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Busy ECM weeks don’t show up in UK placing discounts</title>
+<meta name="description" content="319 UK placings and accelerated bookbuilds, 2019 to 2026: competing supply, discounts, and a comparables tool. Independent student research, not investment advice.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Busy ECM weeks don’t show up in UK placing discounts">
+<meta property="og:description" content="319 UK placings, 2019 to 2026. Six exhibits and a comparables tool: where would your deal price?">
+<!-- After hosting, add: <meta property="og:image" content="https://YOUR-URL/og.png"> (1200x627) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --base: #FFFFFF;
+  --ink: #1A1A1A;
+  --ox: #8B1E1E;
+  --grey: #1A1A1A;        /* no grey text: hierarchy comes from size and weight */
+  --faint: rgba(26, 26, 26, .45);
+  --rule: rgba(26, 26, 26, .14);
+  --tint: rgba(26, 26, 26, .22);
+  --sans: "Libre Franklin", "Franklin Gothic Medium", Arial, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { background: var(--base); scroll-padding-top: 1rem; }
+body {
+  margin: 0; background: var(--base); color: var(--ink);
+  font-family: var(--sans); font-size: 16px; line-height: 1.55;
+  font-variant-numeric: tabular-nums lining-nums; -webkit-text-size-adjust: 100%;
+}
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--ox); }
+:focus-visible { outline: 2px solid var(--ox); outline-offset: 2px; }
+p { margin: 0; }
+
+.page { margin: 0 1.25rem 0 clamp(1.25rem, 6vw, 6rem); max-width: 74rem; padding-bottom: 4rem; }
+
+/* running head, as on a deck page */
+.run {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  border-bottom: 3px solid var(--ink); padding: 1.25rem 0 .55rem; font-size: .8125rem; color: var(--grey);
+}
+
+/* ---------- title page ---------- */
+.title { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 2.25rem; padding: clamp(2.5rem, 7vw, 5rem) 0 3rem; }
+h1 {
+  font-weight: 800; font-size: clamp(2.2rem, 4.8vw, 3.8rem); line-height: 1.02;
+  letter-spacing: -.022em; margin: 0; max-width: 17ch;
+}
+.deck { margin-top: 1.4rem; font-family: var(--serif); font-size: 1.1875rem; line-height: 1.55; max-width: 60ch; }
+.byline { margin-top: 1rem; font-size: .875rem; color: var(--grey); max-width: 64ch; }
+.contents { font-size: .9375rem; }
+@media (max-width: 999.98px) { .contents { display: none; } .title { padding: 2rem 0 1.25rem; row-gap: 0; } .deck { font-size: 1.0625rem; margin-top: 1rem; } .byline { font-size: .8125rem; } }
+.tool-sec { border-top-width: 3px; }
+.contents h2 { font-size: .875rem; font-weight: 700; margin: 0 0 .5rem; padding-bottom: .45rem; border-bottom: 1px solid var(--ink); }
+.contents ol { list-style: none; margin: 0; padding: 0; }
+.contents li { border-bottom: 1px solid var(--rule); }
+.contents a { display: grid; grid-template-columns: 1.6rem 1fr; padding: .5rem 0; text-decoration: none; }
+.contents a span:first-child { font-weight: 700; }
+.contents a.tool { font-weight: 600; }
+.contents a.tool span:first-child { color: var(--ox); }
+@media (min-width: 1000px) {
+  .title { grid-template-columns: minmax(0, 2.2fr) minmax(16rem, 1fr); column-gap: 3.5rem; align-items: end; }
+}
+
+/* ---------- exhibits ---------- */
+.ex {
+  display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 1.25rem;
+  border-top: 1px solid var(--ink); padding: 1.1rem 0 3.25rem;
+}
+.ex-no { font-size: .875rem; font-weight: 700; color: var(--ink); margin-bottom: .3rem; }
+.ex h2 { font-weight: 800; font-size: clamp(1.25rem, 2.1vw, 1.5rem); line-height: 1.25; letter-spacing: -.01em; margin: 0; max-width: 44ch; text-wrap: balance; }
+.ex-body { min-width: 0; }
+.ex-aside { font-family: var(--serif); font-size: 1.0625rem; line-height: 1.55; max-width: 62ch; }
+.ex-aside p + p { margin-top: .75rem; }
+.cap { font-size: .875rem; font-weight: 600; margin: 0 0 .6rem; }
+.cap + .cap { margin-top: -.4rem; }
+.src { font-size: .8125rem; color: var(--grey); margin-top: 1rem; max-width: 80ch; }
+.sub { margin-top: 2rem; }
+@media (min-width: 1000px) {
+  .ex { grid-template-columns: minmax(0, 2.2fr) minmax(16rem, 1fr); column-gap: 3.5rem; }
+  .ex-head { grid-column: 1 / -1; }
+  .ex-aside { grid-column: 2; grid-row: 2; padding-top: .15rem; }
+  .ex-body { grid-column: 1; grid-row: 2; }
+}
+
+/* ---------- interval charts (HTML, so text stays sharp at any width) ---------- */
+.fp { --cols: minmax(0, 15.5rem) minmax(0, 1fr) 4.2rem; }
+.fp.gbp { --cols: minmax(0, 14rem) minmax(0, 1fr) 4.2rem 4.6rem; }
+.fr, .fax { display: grid; grid-template-columns: var(--cols); column-gap: .9rem; align-items: center; }
+.fl { font-size: .875rem; line-height: 1.3; padding: .35rem 0; }
+.ft { position: relative; height: 2.3rem; }
+.fr .ft::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dotted var(--rule); }
+.tk { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--rule); }
+.tk.z { border-left-color: rgba(26, 26, 26, .55); }
+.ci {
+  position: absolute; top: 50%; height: 12px; transform: translateY(-50%); z-index: 1;
+  border-left: 2px solid currentColor; border-right: 2px solid currentColor;
+  background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
+}
+.pt { position: absolute; top: 50%; width: 13px; height: 13px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid currentColor; background: var(--base); transform: translate(-50%, -50%); z-index: 2; }
+.fr.sig .pt { background: currentColor; }
+.fr { color: var(--grey); }
+.fr.key { color: var(--ink); }
+.fr.key .ci { background-size: 100% 3px; }
+.fr.key .pt { width: 15px; height: 15px; border-width: 3px; }
+.fr.sig { color: var(--ox); }
+.fr.sig .ci { background-size: 100% 3px; }
+.fr.sig .pt { width: 15px; height: 15px; }
+.fl { color: var(--ink); }
+.fr.key .fl, .fr.sig .fl { font-weight: 700; }
+.fv, .fg { font-size: .875rem; text-align: right; white-space: nowrap; }
+.fr.key .fv, .fr.sig .fv, .fr.sig .fg { font-weight: 800; }
+.fax { border-top: 1px solid var(--ink); }
+.fax .ft { height: 1.6rem; }
+.fax span.tl { position: absolute; top: .3rem; transform: translateX(-50%); font-size: .75rem; color: var(--grey); white-space: nowrap; }
+.fhd { font-size: .75rem; color: var(--grey); }
+.legend { font-size: .8125rem; margin-top: .7rem; display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; align-items: center; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2.5px solid var(--ink); box-sizing: border-box; vertical-align: -1px; margin-right: .35rem; }
+.legend i.s { background: var(--ox); border-color: var(--ox); }
+.fhd .fv, .fhd .fg { font-size: .75rem; font-weight: 400; }
+@media (max-width: 40rem) {
+  .fp, .fp.gbp { --cols: minmax(0, 1fr) 3.6rem; }
+  .fp.gbp { --cols: minmax(0, 1fr) 3.6rem 4.2rem; }
+  .fl { grid-column: 1 / -1; padding: .55rem 0 0; }
+  .fax > span:first-child, .fhd > span:first-child { display: none; }
+}
+
+/* ---------- column charts ---------- */
+.cols { display: flex; align-items: flex-end; gap: 1.25rem; height: 10.5rem; border-bottom: 1px solid var(--ink); max-width: 30rem; }
+.cols.yrs { gap: .5rem; height: 7rem; max-width: 30rem; }
+.col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.col b { font-weight: 500; font-size: .875rem; text-align: center; margin-bottom: .25rem; }
+.col i { display: block; background: var(--tint); }
+.col.on i { background: var(--ink); }
+.col.on b { font-weight: 600; }
+.colx { display: flex; gap: 1.25rem; max-width: 30rem; font-size: .8125rem; margin-top: .35rem; }
+.colx.yrs { gap: .5rem; }
+.colx span { flex: 1; text-align: center; }
+.colx small { display: block; color: var(--grey); font-size: .75rem; }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 2rem; }
+@media (min-width: 720px) { .pair { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; } }
+
+/* ---------- comparables tool ---------- */
+.ts { border-top: 1px solid var(--ink); max-width: 34rem; }
+.tsr { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); align-items: baseline; padding: .55rem 0; border-bottom: 1px solid var(--rule); }
+.tsr > span { font-size: .875rem; color: var(--grey); }
+.fld { display: inline-flex; align-items: baseline; gap: .2rem; font-size: 16px; }
+.fld input, .fld select {
+  font: inherit; font-size: 16px; font-weight: 500; color: var(--ink); background: transparent;
+  border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; padding: .05rem .1rem; margin: 0;
+}
+.fld input { width: 6ch; text-align: right; }
+.fld select { appearance: none; -webkit-appearance: none; padding-right: 1.2rem; cursor: pointer;
+  background: linear-gradient(45deg, transparent 50%, var(--ink) 50%) calc(100% - .55rem) 55% / 5px 5px no-repeat,
+              linear-gradient(-45deg, transparent 50%, var(--ink) 50%) calc(100% - .25rem) 55% / 5px 5px no-repeat; }
+.fld input:focus, .fld select:focus { border-bottom-color: var(--ox); color: var(--ox); outline: none; }
+.fld input:focus-visible, .fld select:focus-visible { outline: 2px solid var(--ox); outline-offset: 2px; }
+.fld input::placeholder { color: var(--faint); font-weight: 400; }
+.hint { font-size: .875rem; color: var(--ox); min-height: 1.4em; margin-top: .5rem; }
+.answer { font-family: var(--serif); font-size: clamp(1.1875rem, 2vw, 1.375rem); line-height: 1.45; font-weight: 400; max-width: 44ch; margin-top: 1.25rem; }
+.answer b { font-family: var(--sans); font-weight: 800; color: var(--ox); }
+
+.strip { margin-top: 1.75rem; }
+.strip svg { display: block; width: 100%; height: 52px; overflow: visible; }
+.strip path { fill: none; vector-effect: non-scaling-stroke; shape-rendering: crispEdges; }
+.s-all { stroke: var(--tint); stroke-width: 1; }
+.s-comp { stroke: var(--ox); stroke-width: 2; }
+.s-med { stroke: var(--ox); stroke-width: 3; }
+.saxis { position: relative; height: 1.5rem; border-top: 1px solid var(--ink); }
+.saxis span { position: absolute; top: .3rem; transform: translateX(-50%); font-size: .75rem; color: var(--grey); }
+.saxis span:first-child { transform: none; }
+.saxis span:last-child { transform: translateX(-100%); }
+.skey { font-size: .8125rem; color: var(--grey); margin-top: .5rem; }
+
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1.75rem; }
+table { width: 100%; border-collapse: collapse; font-size: .875rem; line-height: 1.4; }
+th, td { padding: .45rem .75rem .45rem 0; text-align: left; vertical-align: baseline; white-space: nowrap; }
+th:last-child, td:last-child { padding-right: 0; }
+thead th { font-weight: 600; font-size: .8125rem; color: var(--grey); border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+tbody td { border-bottom: 1px solid var(--rule); }
+.num { text-align: right; }
+td.co { max-width: 16rem; overflow: hidden; text-overflow: ellipsis; }
+th.co, td.co { position: sticky; left: 0; background: var(--base); }
+td.dx { font-weight: 600; }
+tfoot td, tfoot th { font-weight: 400; }
+tfoot tr:first-child > * { border-top: 1px solid var(--ink); padding-top: .55rem; }
+tfoot th { font-size: .8125rem; font-weight: 600; }
+tfoot tr.md > * { font-weight: 600; }
+tfoot tr.md td.dx { color: var(--ox); }
+.na { font-style: italic; }
+@media (max-width: 40rem) {
+  .mkt, .dt { display: none; }
+  table { font-size: .8125rem; }
+  thead th { white-space: normal; }
+  td.co { max-width: 10.5rem; }
+  th, td { padding-right: .5rem; }
+}
+
+/* reference table */
+table.ref th[scope=row] { font-weight: 400; }
+table.ref .grp { font-weight: 600; color: var(--ink); font-size: .875rem; border-bottom: 1px solid var(--rule); }
+table.ref td.m { font-weight: 600; }
+table.ref td.q, table.ref td.n { color: var(--grey); }
+table.ref .thin { font-weight: 400; font-style: italic; }
+table.ref tr.all > * { border-top: 1px solid var(--ink); }
+table.ref tr.all td.m { color: var(--ox); }
+table.ref .gap { width: 1.5rem; padding: 0; border-bottom-color: transparent; }
+
+/* ---------- method ---------- */
+.method { border-top: 3px solid var(--ink); padding-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+.method h2 { font-size: 1rem; font-weight: 800; margin: 0 0 .4rem; }
+.method p { font-family: var(--serif); font-size: .9375rem; line-height: 1.55; max-width: 60ch; }
+.method p + p { margin-top: .6rem; }
+@media (min-width: 900px) { .method { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 2.5rem; } }
+.foot { margin-top: 3rem; border-top: 1px solid var(--ink); padding-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; font-size: .875rem; }
+.foot p { max-width: 52ch; }
+.foot .g { color: var(--grey); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print { .ts, .hint { display: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="run"><span id="run-l">Rak Mohan | Independent ECM Project</span><span id="run-r"></span></div>
+
+<header class="title">
+  <div>
+    <h1>Busy ECM weeks don’t show up in UK placing discounts.</h1>
+    <p class="deck">An extra £0.43bn raised in other UK equity offerings in the week before launch, a typical busy week, moved placing discounts by about 1bp. A cost above 1.3pp is ruled out at 95% confidence. In this sample, deeper discounts go with an AIM listing and with raises that are large relative to the company.</p>
+    <p class="byline" id="byline"></p>
+  </div>
+  <nav class="contents" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#tool" class="tool"><span></span><span>Where would your deal price?</span></a></li>
+      <li><a href="#exhibit-1"><span>1</span><span>A busy week moved discounts by about 1bp</span></a></li>
+      <li><a href="#exhibit-2"><span>2</span><span>Why the raw numbers mislead</span></a></li>
+      <li><a href="#exhibit-3"><span>3</span><span>14 specifications and 4 subgroups</span></a></li>
+      <li><a href="#exhibit-4"><span>4</span><span>What does go with deeper discounts</span></a></li>
+      <li><a href="#exhibit-5"><span>5</span><span>Discounts by share of capital issued</span></a></li>
+      <li><a href="#method"><span></span><span>Method, data and terms</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<!-- Comparables tool: first thing a LinkedIn visitor sees -->
+<section class="ex tool-sec" id="tool">
+  <div class="ex-head"><p class="ex-no">Comparables tool</p>
+    <h2>Where would your deal price? Enter a deal to see the eight closest comparable placings.</h2></div>
+  <div class="ex-body">
+    <form class="ts" id="deal" autocomplete="off" onsubmit="return false">
+      <label class="tsr"><span>Market</span><span class="fld"><select id="seg"><option value="AIM">AIM</option><option value="MAIN">Main Market</option></select></span></label>
+      <label class="tsr"><span>Amount raised</span><span class="fld">£<input id="size" inputmode="decimal" value="25" aria-describedby="hint">m</span></label>
+      <label class="tsr"><span>New shares</span><span class="fld"><input id="pct" inputmode="decimal" value="15" placeholder="any">% of capital</span></label>
+      <label class="tsr"><span>Use of proceeds</span><span class="fld"><select id="use"><option value="">Any</option><option value="investment">Growth or acquisitions</option><option value="balance_sheet">Balance sheet repair</option><option value="other">Other</option></select></span></label>
+    </form>
+    <p class="hint" id="hint" role="status"></p>
+    <p class="answer" id="answer" aria-live="polite"></p>
+    <div class="strip">
+      <svg viewBox="0 0 1000 52" preserveAspectRatio="none" role="img" id="svg">
+        <path class="s-all" id="p-all"></path><path class="s-comp" id="p-comp"></path><path class="s-med" id="p-med"></path>
+      </svg>
+      <div class="saxis" id="saxis" aria-hidden="true"></div>
+      <p class="skey" id="skey"></p>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="co">Company</th><th class="dt">Launched</th><th class="mkt">Market</th><th class="num">Size £m</th><th class="num">New shares %</th><th class="num">Discount %</th></tr></thead>
+        <tbody id="rows"></tbody>
+        <tfoot id="summ"></tfoot>
+      </table>
+    </div>
+    <p class="src">Source: FCA National Storage Mechanism, LSE new issue statistics, market data; author’s analysis. Discount to last close before launch. n/a: share of capital not published.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Comparables are the eight placings on the same market closest in deal size and share of capital. If you pick a use of proceeds, placings with the same use rank as closer matches. Placings that did not publish their share of capital count as less similar.</p>
+    <p>Eight deals give a wide range, so read the 25th to 75th percentile rows as much as the median. This is a reference point from past deals, not a forecast or a pricing view, and it does not adjust for market conditions at the time.</p>
+  </div>
+</section>
+
+
+
+<!-- Exhibit 1 -->
+<section class="ex" id="exhibit-1">
+  <div class="ex-head"><p class="ex-no">Exhibit 1</p>
+    <h2>A typical busy week moved discounts by about 1bp. A cost above 1.3pp is ruled out at 95% confidence.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Change in discount per extra £0.43bn of UK equity supply (one within-month standard deviation), with 95% intervals</p>
+    <div class="fp" id="c1"></div>
+    <p class="legend"><span><i class="s"></i>Significant at 5%</span><span><i></i>Not significant</span><span>Lines: 95% intervals</span></p>
+    <p class="src">Source: FCA National Storage Mechanism, LSE new issue statistics, market data; author’s analysis. OLS with year-month, segment and industry fixed effects; standard errors clustered by week. n = 319.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Each deal is compared only with deals launched in the same calendar month, market (AIM or Main) and industry, controlling for deal size, share of capital, market moves and deal terms. The specification was fixed before the results were seen.</p>
+    <p>The placebo row is the check. </p>
+    <p>On a £30m raise the interval is about ±£0.4m. The data rule out a cost above 1.3pp, but not a smaller one.</p>
+  </div>
+</section>
+
+<!-- Exhibit 2 -->
+<section class="ex" id="exhibit-2">
+  <div class="ex-head"><p class="ex-no">Exhibit 2</p>
+    <h2>Raw, busy-week deals priced 0.7pp tighter. Most of them launched in 2020.</h2></div>
+  <div class="ex-body">
+    <div class="pair">
+      <div>
+        <p class="cap">Mean discount by supply in the five trading days before launch, deals split into thirds</p>
+        <div class="cols" id="c2a"></div><div class="colx" id="c2ax"></div>
+      </div>
+      <div>
+        <p class="cap">Share of each year’s deals that fall in the busiest third</p>
+        <div class="cols yrs" id="c2b"></div><div class="colx yrs" id="c2bx"></div>
+      </div>
+    </div>
+    <p class="src">Source: as Exhibit 1. Raw means, no controls. Supply relative to its 250-day average.</p>
+  </div>
+  <div class="ex-aside">
+    <p>The raw gap is 0.7pp and not significant (t = −0.45). It also points the wrong way for a congestion story: the busiest weeks priced slightly tighter.</p>
+    <p>“Busy” mostly means 2020. 62% of busy-third deals launched that year, and from 2023 almost none qualify. A raw split therefore compares years, not weeks, which is why Exhibit 1 compares each deal only with deals in the same month.</p>
+  </div>
+</section>
+
+<!-- Exhibit 3 -->
+<section class="ex" id="exhibit-3">
+  <div class="ex-head"><p class="ex-no">Exhibit 3</p>
+    <h2>All 14 specifications include zero, and no subgroup shows a cost the full sample hides.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Alternative specifications: change in discount per one within-month standard deviation of each supply measure, 95% intervals</p>
+    <div class="fp" id="c3a"></div>
+    <div class="sub">
+      <p class="cap">Subgroups: extra effect of a busy week within each group, relative to other deals</p>
+      <div class="fp" id="c3b"></div>
+    <p class="legend"><span><i class="s"></i>Significant at 5%</span><span><i></i>Not significant</span><span>Lines: 95% intervals</span></p>
+    </div>
+    <p class="src">Source: as Exhibit 1. Each row re-estimates the primary model with one change. Subgroup rows are interaction terms.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Changing the window, counting deals instead of pounds, dropping 2020, dropping flagged deals or using only discounts stated in announcements leaves every estimate inside the primary interval.</p>
+    <p>The subgroup tests ask whether a cost appears where it would be most likely: on AIM, in larger deals, in weak markets and in less liquid stocks. None does, but those intervals are wide. These are results where no effect was detected, not proof that there is none.</p>
+  </div>
+</section>
+
+<!-- Exhibit 4 -->
+<section class="ex" id="exhibit-4">
+  <div class="ex-head"><p class="ex-no">Exhibit 4</p>
+    <h2>An AIM listing and a larger raise relative to the company go with discounts 2 to 4pp deeper.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Change in discount in bp (positive is deeper) and in £ on the median £30m raise, 95% intervals</p>
+    <div class="fp gbp" id="c4"></div>
+    <p class="legend"><span><i class="s"></i>Significant at 5%</span><span><i></i>Not significant</span><span>Lines: 95% intervals</span></p>
+    <p class="src">Source: as Exhibit 1. Same model and controls. Associations, not causal estimates.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Raw, AIM placings averaged a 10.6% discount against 5.6% on the Main Market. 391bp of that gap survives the controls, about £1.2m on a £30m raise.</p>
+    <p>Raises of 20% of share capital priced about 215bp deeper than raises of 8%. Deal size in pounds, once relative size is controlled for, is not significant.</p>
+    <p>Open offers priced 6.5pp deeper (p = 0.004). That result is exploratory and probably reflects the type of issuer that uses them.</p>
+  </div>
+</section>
+
+<!-- Exhibit 5 -->
+<section class="ex" id="exhibit-5">
+  <div class="ex-head"><p class="ex-no">Exhibit 5</p>
+    <h2>Median discounts rise with the share of capital issued.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Discount to last close, %: median, interquartile range and number of deals, by new shares as % of existing capital</p>
+    <div class="scroll" style="margin-top:0">
+      <table class="ref" id="ref"></table>
+    </div>
+    <p class="src">Source: as Exhibit 1. Raw, no controls. * Fewer than five deals, indicative only.</p>
+  </div>
+  <div class="ex-aside">
+    <p>On AIM the median discount moves from 6.3% for raises of 10% of capital or less to 14.7% above 40%. Main Market cells above 20% hold fewer than five deals each.</p>
+    <p>116 of 319 deals did not publish their share of capital. They are shown separately rather than estimated.</p>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="method" id="method">
+  <div>
+    <h2>Method</h2>
+    <p>Discount: issue price against the last close before launch, using that day’s close for announcements after 16:35 and the previous day’s otherwise. A negative figure is a premium.</p>
+    <p>Supply: pounds raised in other UK equity offerings of £10m or more (placings, rights issues, open offers, IPOs) in the five trading days before launch, relative to its 250-day average. OLS with year-month, segment and industry fixed effects; errors clustered by week. Single-investor and controller-led deals are excluded.</p>
+  </div>
+  <div>
+    <h2>Data and checks</h2>
+    <p>Every deal was built from launch announcements on the FCA National Storage Mechanism and London Stock Exchange new issue statistics, including companies that have since delisted.</p>
+    <p>Every discount was recomputed from the announcement and the last close before launch. On the 124 deals where the company stated its own discount, the two agree with a correlation of 0.99.</p>
+  </div>
+  <div>
+    <h2>Limits</h2>
+    <p>Placings are pre-sounded, so a congestion cost may show in whether or how much is raised rather than in price; that is untested. All supply is weighted equally, though a £2bn rights issue and a £15m AIM raise draw on different books. Sell-downs are missing (no free source), which likely biases the estimate toward zero. The Main Market sample is thin after 2021.</p>
+    <p>Open question: shares returned 1.9pp less than the market over the 20 trading days after launch, per typical busy week (p = 0.14, not significant; companies still listed only).</p>
+  </div>
+    <div>
+    <h2>Terms used</h2>
+    <p><b>Placing:</b> a listed company selling new shares to investors, usually within a day. <b>Discount:</b> how far below the last market price the shares were sold. <b>bp:</b> a basis point, 0.01 percentage points; 100bp = 1pp. <b>AIM:</b> London’s market for smaller, growth companies; the Main Market is for larger ones. <b>Busy week:</b> an extra £0.43bn of other UK share sales in the week before launch, a typical swing. <b>95% interval:</b> the range the true effect very likely falls in. <b>Significant:</b> unlikely to be chance at the 5% level.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <p><b id="author">Rak Mohan</b>, BSc Computer Science (Economics minor), Lancaster University, 2027.<br>
+    <a href="https://www.linkedin.com/in/rak-mohan-856722238/">LinkedIn</a> &nbsp; <a href="UK_placings_note.pdf">One-page note (PDF)</a></p>
+  <p class="g" id="disclaim">Independent student research, not investment advice.</p>
+</footer>
+
+</div>
+<script>
+const DATA = {"author":"Rak Mohan","n":319,"outside":9,"span":"January 2019 to October 2026","asof":"October 2026","deals":[{"c":"NEXT FIFTEEN COMMUNICATIONS GROUP","t":"2022-03","s":"AIM","z":50.01,"p":4.9,"u":"investment","x":4.31},{"c":"PETROFAC","t":"2021-10","s":"MAIN","z":199.99,"p":null,"u":"balance_sheet","x":27.22},{"c":"HALFORDS GROUP","t":"2021-12","s":"MAIN","z":63.4,"p":9.9,"u":"investment","x":0.0},{"c":"METRO BANK HOLDINGS","t":"2023-11","s":"MAIN","z":150.0,"p":null,"u":"unclear","x":22.28},{"c":"SUPERDRY","t":"2023-05","s":"MAIN","z":11.98,"p":19.1,"u":"unclear","x":9.92},{"c":"SERABI GOLD","t":"2021-03","s":"AIM","z":12.49,"p":28.2,"u":"investment","x":2.6},{"c":"LANCASHIRE HOLDINGS","t":"2020-06","s":"MAIN","z":276.98,"p":null,"u":"investment","x":3.58},{"c":"POWERHOUSE ENERGY GROUP","t":"2021-01","s":"AIM","z":10.0,"p":null,"u":"unclear","x":35.29},{"c":"PENSANA","t":"2021-06","s":"MAIN","z":15.0,"p":null,"u":"balance_sheet","x":6.25},{"c":"XP POWER","t":"2025-03","s":"MAIN","z":40.95,"p":17.3,"u":"balance_sheet","x":5.16},{"c":"CERES POWER HOLDINGS","t":"2026-06","s":"MAIN","z":102.6,"p":9.2,"u":"investment","x":6.48},{"c":"SIRIUS REAL ESTATE LD","t":"2026-02","s":"AIM","z":77.0,"p":5.0,"u":"investment","x":-0.99},{"c":"AVACTA GROUP","t":"2026-10","s":"AIM","z":12.5,"p":null,"u":"investment","x":5.56},{"c":"LIKEWISE GROUP","t":"2026-07","s":"AIM","z":32.5,"p":42.3,"u":"investment","x":14.93},{"c":"SAVANNAH RESOURCES","t":"2026-09","s":"AIM","z":30.09,"p":null,"u":"investment","x":5.5},{"c":"PULSAR HELIUM INC.","t":"2026-07","s":"AIM","z":19.04,"p":null,"u":"investment","x":7.75},{"c":"ATOME","t":"2026-04","s":"AIM","z":26.99,"p":null,"u":"unclear","x":32.13},{"c":"WH SMITH","t":"2020-04","s":"MAIN","z":165.93,"p":13.7,"u":"balance_sheet","x":4.02},{"c":"ASOS","t":"2020-04","s":"AIM","z":246.57,"p":null,"u":"balance_sheet","x":-0.03},{"c":"MJ GLEESON","t":"2020-04","s":"MAIN","z":16.38,"p":4.7,"u":"other","x":-3.45},{"c":"EVERYMAN MEDIA GROUP","t":"2020-04","s":"AIM","z":17.5,"p":19.0,"u":"investment","x":6.98},{"c":"RESTAURANT GROUP","t":"2020-04","s":"MAIN","z":57.01,"p":19.9,"u":"balance_sheet","x":3.17},{"c":"IMIMOBILE","t":"2020-04","s":"AIM","z":22.25,"p":10.0,"u":"investment","x":8.4},{"c":"INFORMA","t":"2020-04","s":"MAIN","z":1001.27,"p":19.99,"u":"balance_sheet","x":4.03},{"c":"THE GYM GROUP","t":"2020-04","s":"MAIN","z":41.27,"p":null,"u":"balance_sheet","x":6.83},{"c":"HOLLYWOOD BOWL GROUP","t":"2020-04","s":"MAIN","z":10.88,"p":5.0,"u":"balance_sheet","x":-1.4},{"c":"FOXTONS GROUP","t":"2020-04","s":"MAIN","z":22.0,"p":null,"u":"balance_sheet","x":-4.17},{"c":"FRANCHISE BRANDS","t":"2020-04","s":"AIM","z":14.0,"p":16.33,"u":"investment","x":2.17},{"c":"FARON PHARMACEUTICALS OY","t":"2020-04","s":"AIM","z":12.18,"p":null,"u":"unclear","x":11.9},{"c":"DFS FURNITURE","t":"2020-04","s":"MAIN","z":63.91,"p":19.9,"u":"balance_sheet","x":-16.28},{"c":"HISCOX","t":"2020-05","s":"MAIN","z":375.01,"p":null,"u":"investment","x":6.12},{"c":"NATIONAL EXPRESS GROUP","t":"2020-05","s":"MAIN","z":235.4,"p":19.99,"u":"unclear","x":3.36},{"c":"COSTAIN GROUP","t":"2020-05","s":"MAIN","z":100.0,"p":null,"u":"investment","x":20.11},{"c":"POLYPIPE GROUP","t":"2020-05","s":"MAIN","z":120.0,"p":null,"u":"balance_sheet","x":7.68},{"c":"SCAPA GROUP","t":"2020-05","s":"AIM","z":32.63,"p":19.99,"u":"investment","x":1.87},{"c":"BEAZLEY","t":"2020-05","s":"MAIN","z":247.32,"p":15.0,"u":"investment","x":4.95},{"c":"DART GROUP","t":"2020-05","s":"AIM","z":171.69,"p":20.0,"u":"balance_sheet","x":0.0},{"c":"ACCESSO TECHNOLOGY GROUP","t":"2020-05","s":"AIM","z":39.1,"p":7.7,"u":"balance_sheet","x":12.59},{"c":"ON THE BEACH GROUP","t":"2020-05","s":"MAIN","z":67.32,"p":19.9,"u":"other","x":0.0},{"c":"OPEN ORPHAN","t":"2020-05","s":"AIM","z":12.63,"p":null,"u":"investment","x":-3.77},{"c":"IWG","t":"2020-05","s":"MAIN","z":320.0,"p":15.4,"u":"investment","x":8.15},{"c":"LEARNING TECHNOLOGIES GROUP","t":"2020-05","s":"AIM","z":81.78,"p":9.6,"u":"investment","x":7.64},{"c":"JOHNSON SERVICE GROUP","t":"2020-05","s":"AIM","z":85.0,"p":19.99,"u":"balance_sheet","x":19.58},{"c":"KROPZ","t":"2020-06","s":"AIM","z":10.84,"p":null,"u":"investment","x":15.62},{"c":"TED BAKER","t":"2020-06","s":"MAIN","z":105.0,"p":14.9,"u":"balance_sheet","x":50.98},{"c":"DECHRA PHARMACEUTICALS","t":"2020-06","s":"MAIN","z":133.44,"p":5.0,"u":"investment","x":5.32},{"c":"OCADO GROUP","t":"2020-06","s":"MAIN","z":650.0,"p":4.7,"u":"investment","x":5.72},{"c":"BIFFA","t":"2020-06","s":"MAIN","z":100.0,"p":19.99,"u":"unclear","x":4.99},{"c":"PETROTAL CORPORATION","t":"2020-06","s":"AIM","z":14.12,"p":17.3,"u":"investment","x":11.11},{"c":"NEXUS INFRASTRUCTURE","t":"2020-06","s":"AIM","z":10.0,"p":null,"u":"unclear","x":12.5},{"c":"STV GROUP","t":"2020-06","s":"MAIN","z":16.22,"p":17.99,"u":"unclear","x":6.67},{"c":"TAYLOR WIMPEY","t":"2020-06","s":"MAIN","z":522.39,"p":null,"u":"balance_sheet","x":4.48},{"c":"BOKU, INC.","t":"2020-06","s":"AIM","z":20.06,"p":8.4,"u":"unclear","x":7.1},{"c":"OXFORD BIOMEDICA","t":"2020-06","s":"MAIN","z":40.0,"p":6.5,"u":"investment","x":3.5},{"c":"TRIFAST","t":"2020-06","s":"MAIN","z":16.0,"p":10.1,"u":"investment","x":9.74},{"c":"SIG","t":"2020-06","s":"MAIN","z":105.0,"p":49.9,"u":"balance_sheet","x":25.37},{"c":"OMEGA DIAGNOSTICS GROUP","t":"2020-06","s":"AIM","z":11.01,"p":18.28,"u":"investment","x":27.27},{"c":"HOSTELWORLD GROUP","t":"2020-06","s":"MAIN","z":13.76,"p":null,"u":"balance_sheet","x":7.1},{"c":"EASYJET","t":"2020-06","s":"MAIN","z":418.58,"p":14.99,"u":"balance_sheet","x":5.0},{"c":"YOUNG & CO'S BREWERY","t":"2020-06","s":"AIM","z":88.45,"p":null,"u":"investment","x":10.08},{"c":"INSTEM","t":"2020-06","s":"AIM","z":15.75,"p":null,"u":"investment","x":4.4},{"c":"AFC ENERGY","t":"2020-06","s":"AIM","z":30.65,"p":28.0,"u":"investment","x":25.23},{"c":"LIONTRUST ASSET MANAGEMENT","t":"2020-07","s":"MAIN","z":66.17,"p":9.17,"u":"unclear","x":0.38},{"c":"FORTERRA","t":"2020-07","s":"MAIN","z":55.0,"p":null,"u":"balance_sheet","x":5.57},{"c":"E-THERAPEUTICS","t":"2020-07","s":"AIM","z":11.59,"p":29.9,"u":"investment","x":31.03},{"c":"INSPIRED ENERGY","t":"2020-07","s":"AIM","z":10.71,"p":20.3,"u":"investment","x":12.54},{"c":"S4 CAPITAL","t":"2020-07","s":"MAIN","z":115.81,"p":7.5,"u":"investment","x":0.0},{"c":"CURTIS BANKS GROUP","t":"2020-07","s":"AIM","z":25.0,"p":22.0,"u":"investment","x":9.48},{"c":"NETWORK INTERNATIONAL HOLDINGS","t":"2020-07","s":"MAIN","z":205.0,"p":10.0,"u":"investment","x":8.89},{"c":"YOURGENE HEALTH","t":"2020-08","s":"AIM","z":16.15,"p":12.4,"u":"investment","x":2.86},{"c":"MELODYVR GROUP","t":"2020-08","s":"AIM","z":11.73,"p":16.2,"u":"investment","x":18.6},{"c":"RPS GROUP","t":"2020-09","s":"MAIN","z":20.19,"p":null,"u":"unclear","x":-15.79},{"c":"SAGA","t":"2020-09","s":"MAIN","z":150.29,"p":29.8,"u":"unclear","x":17.8},{"c":"ESSENTRA","t":"2020-09","s":"MAIN","z":100.0,"p":null,"u":"investment","x":8.77},{"c":"TT ELECTRONICS","t":"2020-09","s":"MAIN","z":20.0,"p":6.1,"u":"investment","x":5.66},{"c":"DIPLOMA","t":"2020-09","s":"MAIN","z":193.75,"p":10.0,"u":"investment","x":0.0},{"c":"DRAPER ESPRIT","t":"2020-10","s":"AIM","z":110.0,"p":null,"u":"investment","x":-0.54},{"c":"C4X DISCOVERY HOLDINGS","t":"2020-10","s":"AIM","z":15.0,"p":89.9,"u":"investment","x":11.11},{"c":"ITM POWER","t":"2020-10","s":"AIM","z":172.01,"p":13.99,"u":"investment","x":8.16},{"c":"SEEING MACHINES","t":"2020-10","s":"AIM","z":15.25,"p":null,"u":"investment","x":-0.61},{"c":"AGRONOMICS","t":"2020-10","s":"AIM","z":10.06,"p":null,"u":"investment","x":6.25},{"c":"ANGLE","t":"2020-10","s":"AIM","z":19.6,"p":20.1,"u":"investment","x":5.15},{"c":"MARLOWE","t":"2020-10","s":"AIM","z":29.76,"p":null,"u":"investment","x":0.0},{"c":"HELIOS UNDERWRITING","t":"2020-11","s":"AIM","z":11.7,"p":null,"u":"investment","x":-4.35},{"c":"TOUCHSTONE EXPLORATION INC","t":"2020-11","s":"AIM","z":23.08,"p":null,"u":"investment","x":4.04},{"c":"CRODA INTERNATIONAL","t":"2020-11","s":"MAIN","z":627.17,"p":8.2,"u":"unclear","x":3.02},{"c":"INSPECS GROUP","t":"2020-11","s":"AIM","z":64.0,"p":30.09,"u":"investment","x":0.0},{"c":"PANTHEON RESOURCES","t":"2020-11","s":"AIM","z":22.86,"p":null,"u":"investment","x":9.88},{"c":"TRACKWISE DESIGNS","t":"2020-11","s":"AIM","z":12.62,"p":null,"u":"investment","x":45.21},{"c":"GREENCORE GROUP","t":"2020-11","s":"MAIN","z":90.0,"p":18.0,"u":"balance_sheet","x":5.72},{"c":"INVINITY ENERGY SYSTEMS","t":"2020-12","s":"AIM","z":22.5,"p":16.0,"u":"investment","x":6.82},{"c":"CAPITAL","t":"2020-12","s":"MAIN","z":30.04,"p":38.0,"u":"unclear","x":7.94},{"c":"SENSYNE HEALTH","t":"2020-12","s":"AIM","z":27.46,"p":21.6,"u":"investment","x":35.71},{"c":"SIGMAROC","t":"2020-12","s":"AIM","z":12.64,"p":9.6,"u":"investment","x":3.32},{"c":"ELECTROCOMPONENTS","t":"2020-12","s":"MAIN","z":180.0,"p":5.0,"u":"investment","x":-1.16},{"c":"ACTUAL EXPERIENCE","t":"2021-01","s":"AIM","z":10.0,"p":null,"u":"other","x":13.93},{"c":"EVGEN PHARMA","t":"2021-02","s":"AIM","z":11.0,"p":50.0,"u":"investment","x":14.44},{"c":"BACANORA LITHIUM","t":"2021-02","s":"AIM","z":48.15,"p":null,"u":"unclear","x":19.64},{"c":"JD SPORTS FASHION","t":"2021-02","s":"MAIN","z":464.23,"p":6.0,"u":"investment","x":2.45},{"c":"JET2","t":"2021-02","s":"AIM","z":421.97,"p":20.0,"u":"investment","x":9.09},{"c":"TRITAX EUROBOX","t":"2021-02","s":"MAIN","z":198.41,"p":null,"u":"unclear","x":2.37},{"c":"SHIELD THERAPEUTICS","t":"2021-02","s":"AIM","z":29.18,"p":70.3,"u":"investment","x":42.06},{"c":"HELIOS UNDERWRITING","t":"2021-03","s":"AIM","z":54.79,"p":18.3,"u":"investment","x":17.95},{"c":"RESTAURANT GROUP","t":"2021-03","s":"MAIN","z":175.24,"p":null,"u":"balance_sheet","x":10.47},{"c":"HOLLYWOOD BOWL GROUP","t":"2021-03","s":"MAIN","z":30.0,"p":8.3,"u":"investment","x":8.0},{"c":"JERSEY OIL AND GAS","t":"2021-03","s":"AIM","z":16.61,"p":null,"u":"investment","x":-1.23},{"c":"CERES POWER HOLDINGS","t":"2021-03","s":"AIM","z":180.92,"p":9.9,"u":"investment","x":4.33},{"c":"MARLOWE","t":"2021-03","s":"AIM","z":100.0,"p":23.2,"u":"investment","x":0.0},{"c":"MEDICA GROUP","t":"2021-03","s":"MAIN","z":16.11,"p":9.6,"u":"investment","x":4.92},{"c":"ZEPHYR ENERGY","t":"2021-03","s":"AIM","z":10.0,"p":null,"u":"investment","x":2.44},{"c":"FULLER, SMITH & TURNER","t":"2021-03","s":"MAIN","z":53.7,"p":null,"u":"balance_sheet","x":4.6},{"c":"DUKE ROYALTY","t":"2021-03","s":"AIM","z":35.0,"p":null,"u":"investment","x":9.09},{"c":"SANNE GROUP","t":"2021-04","s":"MAIN","z":79.55,"p":8.4,"u":"investment","x":4.19},{"c":"KORE POTASH","t":"2021-04","s":"AIM","z":10.09,"p":null,"u":"other","x":33.33},{"c":"HELIUM ONE GLOBAL","t":"2021-04","s":"AIM","z":10.0,"p":20.0,"u":"investment","x":14.53},{"c":"SAVANNAH RESOURCES","t":"2021-04","s":"AIM","z":10.32,"p":null,"u":"investment","x":20.79},{"c":"SOLGOLD","t":"2021-04","s":"MAIN","z":53.09,"p":9.99,"u":"investment","x":11.15},{"c":"RESTORE","t":"2021-04","s":"AIM","z":40.0,"p":8.7,"u":"other","x":5.19},{"c":"INFRASTRATA","t":"2021-05","s":"AIM","z":12.07,"p":null,"u":"investment","x":24.05},{"c":"THG","t":"2021-05","s":"MAIN","z":743.13,"p":null,"u":"unclear","x":0.0},{"c":"AFRITIN MINING","t":"2021-05","s":"AIM","z":13.0,"p":null,"u":"investment","x":12.54},{"c":"KIER GROUP","t":"2021-05","s":"MAIN","z":241.44,"p":null,"u":"balance_sheet","x":16.99},{"c":"NCC GROUP","t":"2021-05","s":"MAIN","z":72.56,"p":9.0,"u":"investment","x":-2.36},{"c":"E-THERAPEUTICS","t":"2021-05","s":"AIM","z":22.5,"p":28.47,"u":"investment","x":16.67},{"c":"FUTURA MEDICAL","t":"2021-05","s":"AIM","z":12.0,"p":null,"u":"investment","x":20.63},{"c":"SEVERN TRENT","t":"2021-05","s":"MAIN","z":250.08,"p":4.3,"u":"investment","x":4.0},{"c":"STAFFLINE GROUP","t":"2021-05","s":"AIM","z":48.42,"p":128.0,"u":"balance_sheet","x":28.57},{"c":"CHARIOT","t":"2021-05","s":"AIM","z":12.59,"p":null,"u":"investment","x":29.58},{"c":"MATTIOLI WOODS","t":"2021-05","s":"AIM","z":112.0,"p":37.0,"u":"investment","x":10.2},{"c":"BRICKABILITY GROUP","t":"2021-06","s":"AIM","z":64.41,"p":null,"u":"investment","x":8.21},{"c":"CRANEWARE","t":"2021-06","s":"AIM","z":136.24,"p":23.1,"u":"investment","x":10.2},{"c":"DRAPER ESPRIT","t":"2021-06","s":"AIM","z":111.22,"p":10.0,"u":"unclear","x":4.65},{"c":"ACCESS INTELLIGENCE","t":"2021-06","s":"AIM","z":50.0,"p":1.1,"u":"investment","x":10.78},{"c":"HELIOS TOWERS","t":"2021-06","s":"MAIN","z":78.24,"p":4.8,"u":"investment","x":5.34},{"c":"AUCTION TECHNOLOGY GROUP","t":"2021-06","s":"MAIN","z":244.0,"p":null,"u":"investment","x":6.58},{"c":"UP GLOBAL SOURCING HOLDINGS","t":"2021-06","s":"MAIN","z":15.0,"p":8.0,"u":"other","x":2.33},{"c":"ANGLE","t":"2021-06","s":"AIM","z":20.0,"p":7.4,"u":"investment","x":6.83},{"c":"ENQUEST","t":"2021-06","s":"MAIN","z":36.12,"p":null,"u":"investment","x":8.65},{"c":"THE GYM GROUP","t":"2021-07","s":"MAIN","z":31.21,"p":6.8,"u":"investment","x":3.51},{"c":"ON THE BEACH GROUP","t":"2021-07","s":"MAIN","z":25.97,"p":5.0,"u":"unclear","x":5.04},{"c":"ESSENSYS","t":"2021-07","s":"AIM","z":33.18,"p":38.7,"u":"investment","x":6.56},{"c":"ILIKA","t":"2021-07","s":"AIM","z":24.74,"p":9.2,"u":"other","x":30.0},{"c":"LEARNING TECHNOLOGIES GROUP","t":"2021-07","s":"AIM","z":85.06,"p":6.0,"u":"investment","x":3.03},{"c":"ASSETCO","t":"2021-07","s":"AIM","z":25.01,"p":null,"u":"investment","x":29.27},{"c":"HOTEL CHOCOLAT GROUP","t":"2021-07","s":"AIM","z":40.0,"p":9.0,"u":"investment","x":2.74},{"c":"ASCENTIAL","t":"2021-07","s":"MAIN","z":153.36,"p":9.0,"u":"investment","x":4.85},{"c":"CREO MEDICAL GROUP","t":"2021-08","s":"AIM","z":36.32,"p":3.2,"u":"investment","x":6.3},{"c":"MERCANTILE PORTS & LOGISTICS","t":"2021-08","s":"AIM","z":10.1,"p":null,"u":"balance_sheet","x":18.18},{"c":"GRAINGER","t":"2021-09","s":"MAIN","z":208.88,"p":null,"u":"investment","x":4.62},{"c":"DISCOVERIE GROUP","t":"2021-09","s":"MAIN","z":53.77,"p":5.98,"u":"unclear","x":0.0},{"c":"SCIENCE GROUP","t":"2021-09","s":"AIM","z":18.56,"p":4.33,"u":"unclear","x":-3.45},{"c":"TRITAX EUROBOX","t":"2021-09","s":"MAIN","z":213.22,"p":null,"u":"investment","x":3.04},{"c":"JUBILEE METALS GROUP","t":"2021-09","s":"AIM","z":30.0,"p":7.7,"u":"investment","x":4.87},{"c":"EENERGY GROUP","t":"2021-09","s":"AIM","z":12.0,"p":28.5,"u":"unclear","x":14.29},{"c":"EURASIA MINING","t":"2021-09","s":"AIM","z":10.8,"p":null,"u":"investment","x":0.0},{"c":"SIRIUS REAL ESTATE LD","t":"2021-11","s":"MAIN","z":136.87,"p":10.0,"u":"unclear","x":5.8},{"c":"INVINITY ENERGY SYSTEMS","t":"2021-11","s":"AIM","z":28.93,"p":28.8,"u":"investment","x":-0.8},{"c":"GB GROUP","t":"2021-11","s":"AIM","z":305.0,"p":21.0,"u":"unclear","x":17.19},{"c":"SEEING MACHINES","t":"2021-11","s":"AIM","z":30.48,"p":null,"u":"investment","x":5.98},{"c":"VELOCYS","t":"2021-11","s":"AIM","z":26.23,"p":22.3,"u":"investment","x":8.57},{"c":"CHECKIT","t":"2021-11","s":"AIM","z":20.96,"p":42.2,"u":"investment","x":4.17},{"c":"SPRINGFIELD PROPERTIES","t":"2021-12","s":"AIM","z":22.0,"p":null,"u":"investment","x":4.44},{"c":"AGRONOMICS","t":"2021-12","s":"AIM","z":31.82,"p":null,"u":"investment","x":6.12},{"c":"PANTHEON RESOURCES","t":"2021-12","s":"AIM","z":31.34,"p":null,"u":"investment","x":14.36},{"c":"HILTON FOOD GROUP","t":"2021-12","s":"MAIN","z":75.0,"p":8.0,"u":"investment","x":4.68},{"c":"LIKEWISE GROUP","t":"2021-12","s":"AIM","z":16.0,"p":19.0,"u":"investment","x":23.42},{"c":"FULCRUM UTILITY SERVICES LD","t":"2021-12","s":"AIM","z":21.26,"p":29.74,"u":"investment","x":12.73},{"c":"CONYGAR INVESTMENT COMPANY PLC (THE)","t":"2021-12","s":"AIM","z":10.71,"p":12.0,"u":"investment","x":7.69},{"c":"OXFORD BIOMEDICA","t":"2022-01","s":"MAIN","z":80.0,"p":11.5,"u":"investment","x":10.0},{"c":"VERICI DX","t":"2022-03","s":"AIM","z":10.0,"p":null,"u":"investment","x":6.67},{"c":"MORTGAGE ADVICE BUREAU (HOLDINGS)","t":"2022-03","s":"AIM","z":40.0,"p":7.0,"u":"investment","x":6.25},{"c":"EBIQUITY","t":"2022-03","s":"AIM","z":15.0,"p":34.0,"u":"unclear","x":8.62},{"c":"BEEKS FINANCIAL CLOUD GROUP","t":"2022-04","s":"AIM","z":15.0,"p":46.7,"u":"investment","x":3.79},{"c":"MARSHALLS","t":"2022-04","s":"MAIN","z":187.36,"p":11.4,"u":"unclear","x":6.14},{"c":"888 HOLDINGS","t":"2022-04","s":"MAIN","z":162.85,"p":19.1,"u":"investment","x":-19.79},{"c":"ANGUS ENERGY","t":"2022-04","s":"AIM","z":10.92,"p":null,"u":"other","x":10.2},{"c":"TRUFIN","t":"2022-04","s":"AIM","z":10.02,"p":null,"u":"unclear","x":9.09},{"c":"DUKE ROYALTY","t":"2022-05","s":"AIM","z":20.0,"p":null,"u":"investment","x":9.09},{"c":"NORCROS","t":"2022-05","s":"MAIN","z":18.6,"p":9.9,"u":"investment","x":0.0},{"c":"CHARIOT","t":"2022-05","s":"AIM","z":23.57,"p":13.0,"u":"investment","x":2.08},{"c":"ACCSYS TECHNOLOGIES","t":"2022-05","s":"AIM","z":16.97,"p":7.2,"u":"investment","x":8.38},{"c":"OCADO GROUP","t":"2022-06","s":"MAIN","z":578.16,"p":9.7,"u":"investment","x":9.41},{"c":"SOUTHERN ENERGY CORP.","t":"2022-06","s":"AIM","z":25.27,"p":null,"u":"investment","x":21.01},{"c":"AO WORLD","t":"2022-07","s":"MAIN","z":44.09,"p":18.1,"u":"other","x":8.51},{"c":"DECHRA PHARMACEUTICALS","t":"2022-07","s":"MAIN","z":184.01,"p":4.95,"u":"investment","x":8.04},{"c":"COATS GROUP","t":"2022-08","s":"MAIN","z":92.23,"p":10.0,"u":"investment","x":4.51},{"c":"WYNNSTAY GROUP","t":"2022-08","s":"AIM","z":10.64,"p":9.0,"u":"investment","x":9.68},{"c":"AFRITIN MINING","t":"2022-09","s":"AIM","z":19.8,"p":26.0,"u":"investment","x":8.26},{"c":"SURFACE TRANSFORMS","t":"2022-09","s":"AIM","z":17.99,"p":null,"u":"investment","x":13.98},{"c":"STRIX GROUP","t":"2022-10","s":"AIM","z":13.0,"p":5.5,"u":"investment","x":10.02},{"c":"BIDSTACK GROUP","t":"2022-10","s":"AIM","z":10.48,"p":null,"u":"investment","x":0.0},{"c":"DEEPVERGE","t":"2022-10","s":"AIM","z":10.81,"p":74.0,"u":"investment","x":20.0},{"c":"BEAZLEY","t":"2022-11","s":"MAIN","z":350.51,"p":9.99,"u":"investment","x":8.0},{"c":"HELIOS UNDERWRITING","t":"2022-11","s":"AIM","z":12.79,"p":11.0,"u":"investment","x":0.32},{"c":"TOUCHSTONE EXPLORATION INC","t":"2022-12","s":"AIM","z":10.86,"p":null,"u":"investment","x":1.8},{"c":"SHIELD THERAPEUTICS","t":"2022-12","s":"AIM","z":17.69,"p":97.7,"u":"investment","x":8.5},{"c":"CREO MEDICAL GROUP","t":"2023-02","s":"AIM","z":33.71,"p":2.94,"u":"investment","x":28.06},{"c":"INVINITY ENERGY SYSTEMS","t":"2023-02","s":"AIM","z":23.04,"p":null,"u":"investment","x":13.51},{"c":"SIGMAROC","t":"2023-02","s":"AIM","z":30.0,"p":8.7,"u":"investment","x":-1.89},{"c":"DIPLOMA","t":"2023-03","s":"MAIN","z":236.11,"p":7.5,"u":"investment","x":4.21},{"c":"FRANCHISE BRANDS","t":"2023-04","s":"AIM","z":114.25,"p":33.0,"u":"unclear","x":25.31},{"c":"ARBUTHNOT BANKING GROUP","t":"2023-04","s":"AIM","z":12.0,"p":8.0,"u":"investment","x":3.39},{"c":"ZOO DIGITAL GROUP","t":"2023-04","s":"AIM","z":12.66,"p":null,"u":"investment","x":13.51},{"c":"PANTHEON RESOURCES","t":"2023-05","s":"AIM","z":17.71,"p":null,"u":"unclear","x":6.59},{"c":"IQE","t":"2023-05","s":"AIM","z":31.1,"p":18.6,"u":"investment","x":14.89},{"c":"ASOS","t":"2023-05","s":"MAIN","z":79.83,"p":null,"u":"unclear","x":0.0},{"c":"MIDWICH GROUP","t":"2023-06","s":"AIM","z":51.25,"p":13.2,"u":"investment","x":5.56},{"c":"ENTAIN","t":"2023-06","s":"MAIN","z":600.0,"p":8.3,"u":"investment","x":6.92},{"c":"VOLEX","t":"2023-06","s":"AIM","z":60.0,"p":13.7,"u":"investment","x":3.85},{"c":"TCLARKE","t":"2023-07","s":"MAIN","z":10.67,"p":16.6,"u":"unclear","x":13.78},{"c":"YOUGOV","t":"2023-07","s":"AIM","z":51.22,"p":4.9,"u":"investment","x":3.66},{"c":"CHARIOT","t":"2023-07","s":"AIM","z":14.87,"p":10.0,"u":"investment","x":10.26},{"c":"DIALIGHT","t":"2023-09","s":"MAIN","z":10.55,"p":19.99,"u":"investment","x":9.4},{"c":"SEVERN TRENT","t":"2023-09","s":"MAIN","z":1000.0,"p":18.2,"u":"investment","x":5.08},{"c":"XP POWER","t":"2023-11","s":"MAIN","z":45.39,"p":19.99,"u":"balance_sheet","x":-6.09},{"c":"SURFACE TRANSFORMS","t":"2023-11","s":"AIM","z":11.03,"p":null,"u":"investment","x":13.04},{"c":"VIDENDUM","t":"2023-11","s":"MAIN","z":126.37,"p":101.0,"u":"balance_sheet","x":3.26},{"c":"ACCSYS TECHNOLOGIES","t":"2023-11","s":"AIM","z":11.68,"p":8.7,"u":"balance_sheet","x":3.17},{"c":"MOLTEN VENTURES","t":"2023-11","s":"MAIN","z":57.41,"p":13.3,"u":"investment","x":3.43},{"c":"SRT MARINE SYSTEMS","t":"2026-04","s":"AIM","z":17.5,"p":7.61,"u":"balance_sheet","x":5.75},{"c":"JUBILEE METALS GROUP","t":"2023-12","s":"AIM","z":13.0,"p":6.23,"u":"investment","x":19.12},{"c":"SRT MARINE SYSTEMS","t":"2023-12","s":"AIM","z":10.23,"p":13.48,"u":"investment","x":15.66},{"c":"AVACTA GROUP","t":"2024-02","s":"AIM","z":31.15,"p":null,"u":"investment","x":33.07},{"c":"SYSGROUP","t":"2024-06","s":"AIM","z":11.23,"p":null,"u":"investment","x":5.71},{"c":"AFC ENERGY","t":"2024-06","s":"AIM","z":15.79,"p":12.3,"u":"investment","x":26.83},{"c":"PANTHEON RESOURCES","t":"2024-07","s":"AIM","z":26.32,"p":null,"u":"unclear","x":13.79},{"c":"FACILITIES BY ADF","t":"2024-08","s":"AIM","z":10.5,"p":null,"u":"investment","x":5.66},{"c":"KITWAVE GROUP","t":"2024-09","s":"AIM","z":31.5,"p":14.7,"u":"unclear","x":3.94},{"c":"CREO MEDICAL GROUP","t":"2024-09","s":"AIM","z":12.09,"p":3.25,"u":"investment","x":10.28},{"c":"RENALYTIX","t":"2024-09","s":"AIM","z":15.09,"p":null,"u":"investment","x":2.7},{"c":"MPAC GROUP","t":"2024-10","s":"AIM","z":30.0,"p":25.2,"u":"unclear","x":3.61},{"c":"THG","t":"2024-10","s":"MAIN","z":95.41,"p":null,"u":"investment","x":-4.26},{"c":"PENSIONBEE GROUP","t":"2024-10","s":"MAIN","z":20.0,"p":4.8,"u":"investment","x":0.0},{"c":"ONDINE BIOMEDICAL INC.","t":"2024-11","s":"AIM","z":10.69,"p":38.0,"u":"unclear","x":-1.49},{"c":"BOOHOO GROUP","t":"2024-11","s":"AIM","z":39.34,"p":null,"u":"balance_sheet","x":-3.33},{"c":"COHORT","t":"2024-11","s":"AIM","z":41.0,"p":11.2,"u":"unclear","x":4.27},{"c":"WARPAINT LONDON","t":"2024-12","s":"AIM","z":15.0,"p":3.53,"u":"investment","x":2.67},{"c":"INSPIRED","t":"2024-12","s":"AIM","z":21.66,"p":null,"u":"balance_sheet","x":-1.27},{"c":"THG","t":"2025-03","s":"MAIN","z":22.13,"p":null,"u":"investment","x":5.0},{"c":"TOUCHSTONE EXPLORATION INC","t":"2025-05","s":"AIM","z":15.38,"p":null,"u":"investment","x":11.83},{"c":"PANTHEON RESOURCES","t":"2025-07","s":"AIM","z":20.26,"p":null,"u":"other","x":14.02},{"c":"COATS GROUP","t":"2025-07","s":"MAIN","z":246.06,"p":20.0,"u":"investment","x":6.21},{"c":"AFC ENERGY","t":"2025-07","s":"AIM","z":27.47,"p":26.8,"u":"investment","x":26.47},{"c":"OXFORD BIOMEDICA","t":"2025-08","s":"MAIN","z":60.0,"p":13.1,"u":"investment","x":1.93},{"c":"REVOLUTION BEAUTY GROUP","t":"2025-08","s":"AIM","z":16.5,"p":156.5,"u":"investment","x":14.29},{"c":"ONDINE BIOMEDICAL INC.","t":"2025-08","s":"AIM","z":11.0,"p":null,"u":"unclear","x":9.09},{"c":"PANTHEON RESOURCES","t":"2025-09","s":"AIM","z":22.14,"p":null,"u":"unclear","x":9.09},{"c":"RM","t":"2025-10","s":"MAIN","z":13.5,"p":null,"u":"investment","x":5.0},{"c":"GELION","t":"2025-10","s":"AIM","z":10.5,"p":null,"u":"investment","x":18.37},{"c":"AVACTA GROUP","t":"2025-10","s":"AIM","z":16.0,"p":5.8,"u":"unclear","x":8.7},{"c":"ROADSIDE REAL ESTATE","t":"2026-02","s":"AIM","z":20.75,"p":28.7,"u":"investment","x":14.29},{"c":"CAPITAL","t":"2025-11","s":"MAIN","z":30.58,"p":9.99,"u":"investment","x":4.89},{"c":"SSE","t":"2025-11","s":"MAIN","z":2007.29,"p":8.8,"u":"unclear","x":-3.82},{"c":"UNITED UTILITIES GROUP","t":"2026-04","s":"MAIN","z":800.0,"p":null,"u":"unclear","x":0.0},{"c":"WH SMITH","t":"2026-06","s":"MAIN","z":105.8,"p":20.0,"u":"unclear","x":16.7},{"c":"ROSEBANK INDUSTRIES","t":"2026-03","s":"AIM","z":1919.98,"p":null,"u":"investment","x":-0.61},{"c":"CHARIOT","t":"2026-02","s":"AIM","z":18.03,"p":null,"u":"unclear","x":-1.45},{"c":"ENSILICA","t":"2026-07","s":"AIM","z":14.89,"p":null,"u":"investment","x":3.19},{"c":"BOOHOO GROUP","t":"2026-02","s":"AIM","z":40.0,"p":null,"u":"unclear","x":5.26},{"c":"ATALAYA MINING COPPER, S.A.","t":"2026-01","s":"MAIN","z":130.0,"p":null,"u":"investment","x":6.89},{"c":"AVACTA GROUP","t":"2026-03","s":"AIM","z":10.0,"p":3.6,"u":"investment","x":9.35},{"c":"FERREXPO","t":"2026-09","s":"MAIN","z":74.06,"p":73.1,"u":"balance_sheet","x":42.31},{"c":"INFORMA","t":"2026-10","s":"MAIN","z":940.0,"p":8.7,"u":"unclear","x":0.23},{"c":"PORTMEIRION GROUP","t":"2026-06","s":"AIM","z":18.58,"p":null,"u":"balance_sheet","x":47.09},{"c":"ROCKHOPPER EXPLORATION","t":"2026-08","s":"AIM","z":132.45,"p":22.0,"u":"investment","x":4.27},{"c":"KEFI GOLD AND COPPER","t":"2026-03","s":"AIM","z":35.57,"p":5.5,"u":"investment","x":13.98},{"c":"IXICO","t":"2026-03","s":"AIM","z":10.03,"p":null,"u":"investment","x":-1.59},{"c":"HELIX EXPLORATION","t":"2026-07","s":"AIM","z":17.6,"p":null,"u":"investment","x":15.38},{"c":"AFENTRA","t":"2026-06","s":"AIM","z":31.69,"p":19.6,"u":"investment","x":5.23},{"c":"KEFI GOLD AND COPPER","t":"2025-12","s":"AIM","z":15.77,"p":null,"u":"unclear","x":10.03},{"c":"SOFTCAT","t":"2026-09","s":"MAIN","z":354.0,"p":9.5,"u":"investment","x":3.96},{"c":"EVE SLEEP","t":"2019-01","s":"AIM","z":12.03,"p":86.1,"u":"investment","x":3.61},{"c":"ZEGONA COMMUNICATIONS","t":"2019-01","s":"MAIN","z":100.5,"p":null,"u":"unclear","x":7.49},{"c":"DRAPER ESPRIT","t":"2019-01","s":"AIM","z":100.0,"p":16.0,"u":"investment","x":12.4},{"c":"GORDON DADDS GROUP","t":"2019-01","s":"AIM","z":11.5,"p":28.7,"u":"investment","x":25.93},{"c":"BLUE PRISM GROUP","t":"2019-01","s":"AIM","z":100.0,"p":11.9,"u":"investment","x":5.17},{"c":"SIGMAROC","t":"2019-01","s":"AIM","z":12.41,"p":null,"u":"unclear","x":1.44},{"c":"LOW & BONAR","t":"2019-01","s":"MAIN","z":53.95,"p":47.4,"u":"investment","x":17.13},{"c":"MIDATECH PHARMA","t":"2019-02","s":"AIM","z":13.41,"p":null,"u":"unclear","x":6.1},{"c":"SYSGROUP","t":"2019-02","s":"AIM","z":10.0,"p":null,"u":"unclear","x":9.52},{"c":"VICTORIA OIL & GAS","t":"2019-03","s":"AIM","z":13.57,"p":7.37,"u":"investment","x":13.56},{"c":"JUBILEE METALS GROUP","t":"2019-03","s":"AIM","z":11.07,"p":null,"u":"unclear","x":8.16},{"c":"ASTRAZENECA","t":"2019-03","s":"MAIN","z":2685.37,"p":3.5,"u":"balance_sheet","x":6.87},{"c":"ECO (ATLANTIC) OIL & GAS","t":"2019-04","s":"AIM","z":12.93,"p":18.8,"u":"investment","x":4.19},{"c":"DISCOVERIE GROUP","t":"2019-04","s":"MAIN","z":29.24,"p":9.96,"u":"unclear","x":3.85},{"c":"BREWIN DOLPHIN HOLDINGS","t":"2019-05","s":"MAIN","z":60.0,"p":null,"u":"investment","x":4.98},{"c":"METRO BANK","t":"2019-05","s":"MAIN","z":375.0,"p":6.3,"u":"investment","x":6.8},{"c":"AB DYNAMICS","t":"2019-05","s":"AIM","z":50.1,"p":10.42,"u":"other","x":12.57},{"c":"HUNTSWORTH","t":"2019-05","s":"MAIN","z":16.25,"p":5.0,"u":"unclear","x":5.87},{"c":"SERCO GROUP","t":"2019-05","s":"MAIN","z":140.13,"p":10.0,"u":"balance_sheet","x":-4.05},{"c":"KORE POTASH","t":"2019-06","s":"AIM","z":10.35,"p":43.0,"u":"unclear","x":27.27},{"c":"BATM ADVANCED COMMUNICATIONS LD","t":"2019-06","s":"MAIN","z":14.15,"p":7.6,"u":"unclear","x":5.56},{"c":"STAFFLINE GROUP","t":"2019-06","s":"AIM","z":40.99,"p":null,"u":"balance_sheet","x":26.16},{"c":"BLANCCO TECHNOLOGY GROUP","t":"2019-07","s":"AIM","z":10.0,"p":null,"u":"investment","x":1.96},{"c":"IMIMOBILE","t":"2019-07","s":"AIM","z":20.25,"p":9.7,"u":"unclear","x":-0.32},{"c":"MYSALE GROUP","t":"2019-08","s":"AIM","z":12.81,"p":78.0,"u":"balance_sheet","x":57.89},{"c":"DUKE ROYALTY","t":"2019-10","s":"AIM","z":17.45,"p":null,"u":"investment","x":6.38},{"c":"TIME OUT GROUP","t":"2019-10","s":"AIM","z":17.11,"p":null,"u":"investment","x":-2.7},{"c":"REABOLD RESOURCES","t":"2019-10","s":"AIM","z":24.0,"p":null,"u":"unclear","x":12.2},{"c":"SIGMAROC","t":"2019-10","s":"AIM","z":32.77,"p":null,"u":"investment","x":0.0},{"c":"DISCOVERIE GROUP","t":"2019-10","s":"MAIN","z":33.34,"p":9.96,"u":"investment","x":3.94},{"c":"WH SMITH","t":"2019-10","s":"MAIN","z":155.0,"p":7.0,"u":"investment","x":-2.97},{"c":"FUTURE","t":"2019-10","s":"MAIN","z":104.36,"p":9.6,"u":"investment","x":6.25},{"c":"BROOKS MACDONALD GROUP","t":"2019-11","s":"AIM","z":30.0,"p":12.1,"u":"investment","x":2.74},{"c":"CREO MEDICAL GROUP","t":"2019-12","s":"AIM","z":51.9,"p":null,"u":"investment","x":8.86},{"c":"MERCIA ASSET MANAGEMENT","t":"2019-12","s":"AIM","z":30.0,"p":null,"u":"investment","x":21.88},{"c":"IG DESIGN GROUP","t":"2020-01","s":"AIM","z":120.0,"p":null,"u":"investment","x":2.25},{"c":"RENEW HOLDINGS","t":"2020-01","s":"AIM","z":15.0,"p":4.2,"u":"investment","x":6.86},{"c":"BENCHMARK HOLDINGS","t":"2020-01","s":"AIM","z":42.98,"p":16.3,"u":"investment","x":10.11},{"c":"MIDWICH GROUP","t":"2020-02","s":"AIM","z":39.72,"p":9.9,"u":"investment","x":6.37},{"c":"GRAINGER","t":"2020-02","s":"MAIN","z":186.66,"p":9.99,"u":"investment","x":2.31},{"c":"4D PHARMA","t":"2020-02","s":"AIM","z":22.0,"p":40.2,"u":"investment","x":27.8},{"c":"ILIKA","t":"2020-03","s":"AIM","z":15.1,"p":37.2,"u":"unclear","x":10.11},{"c":"HOTEL CHOCOLAT GROUP","t":"2020-03","s":"AIM","z":22.0,"p":8.5,"u":"investment","x":3.02},{"c":"EVR HOLDINGS","t":"2020-03","s":"AIM","z":10.33,"p":16.01,"u":"other","x":6.25},{"c":"SSP GROUP","t":"2020-03","s":"MAIN","z":215.49,"p":19.3,"u":"investment","x":-6.16},{"c":"AUTO TRADER GROUP","t":"2020-04","s":"MAIN","z":185.87,"p":5.0,"u":"balance_sheet","x":8.9},{"c":"EUROCELL","t":"2020-04","s":"MAIN","z":17.55,"p":9.0,"u":"investment","x":9.33},{"c":"HAYS","t":"2020-04","s":"MAIN","z":200.0,"p":null,"u":"balance_sheet","x":13.16}]};
+const K = 8, LO = -10, HI = 40;
+const $ = id => document.getElementById(id);
+const MINUS = "\u2212";
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+/* Locked results (319-deal main sample). Rows: label, estimate, ci low, ci high, style */
+const EX1 = [["Prior week, all supply", .8, -131.6, 133.3, "key"], ["Next 10 days (placebo)", -9.8, -138.0, 118.3],
+  ["Prior week, same sector", -29.8, -232.6, 173.0], ["Prior week, other sectors", 13.7, -107.5, 134.9]];
+const EX3A = [["Primary: £ supply, prior 5 days", .8, -131.6, 133.3, "key"], ["£ supply, prior 10 days", 4.5, -137.0, 146.0],
+  ["Number of deals, prior 5 days", .2, -110.4, 110.8], ["Number of deals, prior 10 days", -69.6, -188.7, 49.5],
+  ["Log of supply", 18.6, -98.9, 136.1], ["Without winsorising", -1.2, -120.0, 117.7],
+  ["Fund and REIT raises removed from supply", -10.9, -155.8, 134.0], ["Excluding 2020 (n = 227)", -11.8, -134.7, 111.0],
+  ["Excluding 2026 (n = 293)", 3.8, -127.8, 135.4], ["Errors clustered by week and issuer", .8, -131.0, 132.7],
+  ["Excluding flagged deals (n = 298)", -40.6, -176.2, 95.0], ["Announcement-stated discounts only (n = 210)", -29.2, -206.5, 148.1],
+  ["Adding oversubscribed and upsized flags", -1.8, -135.4, 131.7], ["Adding same-day supply", .2, -132.1, 132.4]];
+const EX3B = [["On AIM", -74.2, -263.9, 115.5], ["Larger deals", 54.5, -164.7, 273.8],
+  ["Weak markets", -48.4, -318.7, 222.0], ["Less liquid stocks (n = 232)", 105.5, -161.8, 372.8]];
+const EX4 = [["AIM vs Main Market", 391, 139, 643, "sig", "£1.2m"], ["New shares 8% to 20% of capital", 215, 44, 386, "sig", "£0.65m"],
+  ["Deal size £15m to £98m", -89, -312, 134, "", MINUS + "£0.27m"], ["Busy week, +£0.43bn of supply", 1, -132, 133, "", "£0.00m"]];
+const RAW = [["Quiet", 9.16, 108], ["Middle", 8.56, 105], ["Busy", 8.50, 106]];
+const YRS = [[2019, 20], [2020, 72], [2021, 37], [2022, 10], [2023, 0], [2024, 0], [2025, 0], [2026, 4]];
+const REF = [ /* band, AIM [median, p25, p75, n], Main [median, p25, p75, n] */
+  ["10% or less", [6.3, 3.4, 9.8, 40], [4.2, .2, 5.9, 53]], ["10 to 20%", [7.0, 3.9, 14.5, 33], [5.1, 3.4, 8.5, 29]],
+  ["20 to 40%", [10.2, 4.9, 16.8, 28], [12.9, 10.4, 15.3, 2]], ["Over 40%", [14.7, 9.1, 27.7, 14], [21.3, 13.7, 29.6, 4]],
+  ["Not published", [9.0, 2.6, 14.0, 84], [5.8, 3.4, 7.9, 32]], ["All deals", [8.4, 3.8, 14.3, 199], [5.0, 2.4, 7.7, 120]]];
+
+const sgn = (v, d = 0) => (v > 0 ? "+" : v < 0 ? MINUS : "") + Math.abs(v).toFixed(d);
+const bp = v => sgn(Math.round(v) === 0 && v !== 0 ? Math.round(v) : Math.round(v)) + "bp";
+const f1 = v => (v < 0 ? MINUS : "") + Math.abs(v).toFixed(1);
+const num = s => { const v = parseFloat(String(s).replace(/[,£%\s]/g, "")); return isFinite(v) ? v : NaN; };
+const quant = (a, q) => { const s = [...a].sort((x, y) => x - y), i = (s.length - 1) * q, l = Math.floor(i);
+  return s[l] + (s[Math.min(l + 1, s.length - 1)] - s[l]) * (i - l); };
+const sd = a => { const m = a.reduce((x, y) => x + y, 0) / a.length;
+  return Math.sqrt(a.reduce((x, y) => x + (y - m) ** 2, 0) / (a.length - 1)) || 1; };
+const month = s => { const [y, m] = s.split("-"); return MON[+m - 1] + " " + y; };
+/* Company names arrive in capitals: set them in title case, keeping short acronyms (IQE, ITV) */
+const SMALL = new Set(["AND", "OF", "THE", "FOR", "IN", "ON", "&"]);
+const keep = w => w.includes("&") || w.length <= 2 || (w.length === 3 && !/[AEIOUY]/.test(w[1]));
+const nice = s => /[a-z]/.test(s) ? s : s.split(/(\s+)/).map((w, i) => /^\s+$/.test(w) ? w
+  : SMALL.has(w) || w === "CO" ? (i && w !== "CO" ? w.toLowerCase() : w.charAt(0) + w.slice(1).toLowerCase()) : keep(w) ? w : w.charAt(0) + w.slice(1).toLowerCase()).join("");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+function forest(el, rows, lo, hi, ticks, gbp) {
+  const x = v => ((Math.min(hi, Math.max(lo, v)) - lo) / (hi - lo) * 100).toFixed(2) + "%";
+  const tk = ticks.map(t => `<i class="tk${t === 0 ? " z" : ""}" style="left:${x(t)}"></i>`).join("");
+  let h = gbp ? `<div class="fax fhd" style="border:0"><span></span><span></span><span class="fv">bp</span><span class="fg">£</span></div>` : "";
+  h += rows.map(([lab, e, a, b, cls = "", g]) => `<div class="fr ${cls}"><span class="fl">${lab}</span>`
+    + `<span class="ft">${tk}<i class="ci" style="left:${x(a)};width:calc(${x(b)} - ${x(a)})"></i><i class="pt" style="left:${x(e)}"></i></span>`
+    + `<span class="fv">${bp(e)}</span>${gbp ? `<span class="fg">${g}</span>` : ""}</div>`).join("");
+  h += `<div class="fax" aria-hidden="true"><span></span><span class="ft">${ticks.map(t =>
+    `<span class="tl" style="left:${x(t)}">${t === 0 ? "0" : sgn(t)}</span>`).join("")}</span><span></span>${gbp ? "<span></span>" : ""}</div>`;
+  el.innerHTML = h;
+  el.setAttribute("role", "img");
+  el.setAttribute("aria-label", rows.map(r => `${r[0]}: ${bp(r[1])}, 95% interval ${bp(r[2])} to ${bp(r[3])}`).join("; "));
+}
+
+function columns(el, xl, rows, max, on, fmt, sub) {
+  el.innerHTML = rows.map(r => `<div class="col${on(r) ? " on" : ""}"><b>${fmt(r[1])}</b><i style="height:${(r[1] / max * 82).toFixed(1)}%"></i></div>`).join("");
+  xl.innerHTML = rows.map(r => `<span>${sub(r)}</span>`).join("");
+}
+
+function refTable() {
+  const cell = c => {
+    const thin = c[3] < 5, t = thin ? ' class="thin"' : "";
+    return `<td class="num m"><span${t}>${c[0].toFixed(1)}</span></td><td class="num q">${thin ? "too few" : c[1].toFixed(1) + " to " + c[2].toFixed(1)}</td><td class="num n">${c[3]}${thin ? "*" : ""}</td>`;
+  };
+  $("ref").innerHTML = `<thead><tr><th></th><th class="grp" colspan="3">AIM</th><th class="gap"></th><th class="grp" colspan="3">Main Market</th></tr>`
+    + `<tr><th>New shares, % of capital</th><th class="num">Median</th><th class="num">IQR</th><th class="num">n</th><th class="gap"></th><th class="num">Median</th><th class="num">IQR</th><th class="num">n</th></tr></thead><tbody>`
+    + REF.map(r => `<tr${r[0] === "All deals" ? ' class="all"' : ""}><th scope="row">${r[0]}</th>${cell(r[1])}<td class="gap"></td>${cell(r[2])}</tr>`).join("")
+    + "</tbody>";
+}
+
+function staticExhibits() {
+  forest($("c1"), EX1, -250, 250, [-200, 0, 200]);
+  forest($("c3a"), EX3A, -400, 400, [-300, 0, 300]);
+  forest($("c3b"), EX3B, -400, 400, [-300, 0, 300]);
+  forest($("c4"), EX4, -400, 700, [-300, 0, 300, 600], true);
+  columns($("c2a"), $("c2ax"), RAW, 10, r => r[0] === "Busy", v => v.toFixed(1) + "%", r => `${r[0]}<small>n = ${r[2]}</small>`);
+  columns($("c2b"), $("c2bx"), YRS, 80, r => r[0] === 2020, v => v + "%", r => "’" + String(r[0]).slice(2));
+  refTable();
+}
+
+function init() {
+  staticExhibits();
+  if (!DATA || !DATA.deals || !DATA.deals.length) {
+    $("answer").textContent = "This page has no deal data yet. Run scripts/10_tool_export.py to build it.";
+    return;
+  }
+  const D = DATA.deals;
+  DATA.sdSize = sd(D.map(d => Math.log(d.z)));
+  DATA.sdPct = sd(D.filter(d => d.p).map(d => Math.log(d.p)));
+  $("run-r").textContent = "Deals to " + DATA.asof;
+  $("byline").textContent = `Independent student research by ${DATA.author} on ${DATA.n} UK placings and accelerated bookbuilds of £10m or more, ${DATA.span}. Not investment advice.`;
+  $("author").textContent = DATA.author;
+  $("disclaim").textContent = `Independent student research, not investment advice. Deals to ${DATA.asof}.`;
+  $("p-all").setAttribute("d", D.map(d => `M${xOf(d.x).toFixed(1)} 14V40`).join(""));
+  $("saxis").innerHTML = [-10, 0, 10, 20, 30, 40].map(v => `<span style="left:${(v - LO) / (HI - LO) * 100}%">${v < 0 ? MINUS + Math.abs(v) : v}%</span>`).join("");
+  ["seg", "use"].forEach(id => $(id).addEventListener("change", update));
+  ["size", "pct"].forEach(id => {
+    $(id).addEventListener("input", update);
+    $(id).addEventListener("blur", () => { const v = num($(id).value);
+      if (isFinite(v) && v > 0) $(id).value = +v.toFixed(1); });
+  });
+  update();
+}
+const xOf = v => (Math.min(HI, Math.max(LO, v)) - LO) / (HI - LO) * 1000;
+
+function update() {
+  const seg = $("seg").value, use = $("use").value, mk = seg === "AIM" ? "AIM" : "Main Market";
+  const size = num($("size").value), pctRaw = $("pct").value.trim(), pct = num(pctRaw), hint = $("hint");
+  if (!(size > 0)) { hint.textContent = "Enter the amount raised in £ millions to find comparable placings."; return; }
+  if (pctRaw && !(pct > 0 && pct <= 500)) { hint.textContent = "Enter new shares as a percentage of capital above zero, or leave it blank."; return; }
+  hint.textContent = "";
+
+  let pool = DATA.deals.filter(d => d.s === seg);
+  if (pool.length < K) pool = DATA.deals;
+  const comps = pool.map(d => {
+    let sc = Math.abs(Math.log(d.z) - Math.log(size)) / DATA.sdSize;
+    if (pct > 0) sc += d.p ? Math.abs(Math.log(d.p) - Math.log(pct)) / DATA.sdPct : 1;
+    if (use && d.u !== use) sc += .75;
+    return { d, sc };
+  }).sort((a, b) => a.sc - b.sc || (b.d.t > a.d.t ? 1 : -1)).slice(0, K).map(o => o.d);
+
+  const xs = comps.map(d => d.x), med = quant(xs, .5), q1 = quant(xs, .25), q3 = quant(xs, .75);
+  $("answer").innerHTML = `The ${comps.length} closest ${mk} placings priced at a median discount of <b>${f1(med)}%</b>, with the middle half between ${f1(q1)}% and ${f1(q3)}%.`;
+  $("p-comp").setAttribute("d", comps.map(d => `M${xOf(d.x).toFixed(1)} 4V48`).join(""));
+  $("p-med").setAttribute("d", `M${xOf(med).toFixed(1)} 0V52`);
+  $("svg").setAttribute("aria-label", `Discounts of all ${DATA.n} placings, with the ${comps.length} comparables highlighted`);
+  $("skey").innerHTML = `Each light line is one of the ${DATA.n} placings; the red lines are the comparables and the thick red line is their median.${DATA.outside ? ` ${DATA.outside} placings outside ${MINUS}10% to 40% are drawn at the edge.` : ""}`;
+
+  $("rows").innerHTML = comps.map(d => `<tr><td class="co" title="${esc(nice(d.c))}">${esc(nice(d.c))}</td><td class="dt">${month(d.t)}</td>`
+    + `<td class="mkt">${d.s === "AIM" ? "AIM" : "Main"}</td><td class="num">${d.z.toLocaleString("en-GB", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</td>`
+    + `<td class="num${d.p ? "" : " na"}">${d.p ? d.p.toFixed(1) : "n/a"}</td><td class="num dx">${f1(d.x)}</td></tr>`).join("");
+  const zs = comps.map(d => d.z), ps = comps.filter(d => d.p).map(d => d.p);
+  const stat = (a, q) => a.length ? (q === 1 ? Math.max(...a) : q === 0 ? Math.min(...a) : quant(a, q)) : NaN;
+  const cellz = v => isFinite(v) ? v.toLocaleString("en-GB", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) : "n/a";
+  $("summ").innerHTML = [["High", 1], ["75th percentile", .75], ["Median", .5, "md"], ["25th percentile", .25], ["Low", 0]]
+    .map(([lab, q, cls]) => `<tr${cls ? ` class="${cls}"` : ""}><th class="co" scope="row">${lab}</th><td class="dt"></td><td class="mkt"></td>`
+      + `<td class="num">${cellz(stat(zs, q))}</td><td class="num">${isFinite(stat(ps, q)) ? stat(ps, q).toFixed(1) : "n/a"}</td><td class="num dx">${f1(stat(xs, q))}</td></tr>`).join("");
+}
+init();
+</script>
+</body>
+</html>
