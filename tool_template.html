@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Busy ECM weeks don’t show up in UK placing discounts</title>
+<meta name="description" content="319 UK placings and accelerated bookbuilds, 2019 to 2026: competing supply, discounts, and a comparables tool. Independent student research, not investment advice.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Busy ECM weeks don’t show up in UK placing discounts">
+<meta property="og:description" content="319 UK placings, 2019 to 2026. Six exhibits and a comparables tool: where would your deal price?">
+<!-- After hosting, add: <meta property="og:image" content="https://YOUR-URL/og.png"> (1200x627) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --base: #FFFFFF;
+  --ink: #1A1A1A;
+  --ox: #8B1E1E;
+  --grey: #1A1A1A;        /* no grey text: hierarchy comes from size and weight */
+  --faint: rgba(26, 26, 26, .45);
+  --rule: rgba(26, 26, 26, .14);
+  --tint: rgba(26, 26, 26, .22);
+  --sans: "Libre Franklin", "Franklin Gothic Medium", Arial, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { background: var(--base); scroll-padding-top: 1rem; }
+body {
+  margin: 0; background: var(--base); color: var(--ink);
+  font-family: var(--sans); font-size: 16px; line-height: 1.55;
+  font-variant-numeric: tabular-nums lining-nums; -webkit-text-size-adjust: 100%;
+}
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--ox); }
+:focus-visible { outline: 2px solid var(--ox); outline-offset: 2px; }
+p { margin: 0; }
+
+.page { margin: 0 1.25rem 0 clamp(1.25rem, 6vw, 6rem); max-width: 74rem; padding-bottom: 4rem; }
+
+/* running head, as on a deck page */
+.run {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  border-bottom: 3px solid var(--ink); padding: 1.25rem 0 .55rem; font-size: .8125rem; color: var(--grey);
+}
+
+/* ---------- title page ---------- */
+.title { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 2.25rem; padding: clamp(2.5rem, 7vw, 5rem) 0 3rem; }
+h1 {
+  font-weight: 800; font-size: clamp(2.2rem, 4.8vw, 3.8rem); line-height: 1.02;
+  letter-spacing: -.022em; margin: 0; max-width: 17ch;
+}
+.deck { margin-top: 1.4rem; font-family: var(--serif); font-size: 1.1875rem; line-height: 1.55; max-width: 60ch; }
+.byline { margin-top: 1rem; font-size: .875rem; color: var(--grey); max-width: 64ch; }
+.contents { font-size: .9375rem; }
+@media (max-width: 999.98px) { .contents { display: none; } .title { padding: 2rem 0 1.25rem; row-gap: 0; } .deck { font-size: 1.0625rem; margin-top: 1rem; } .byline { font-size: .8125rem; } }
+.tool-sec { border-top-width: 3px; }
+.contents h2 { font-size: .875rem; font-weight: 700; margin: 0 0 .5rem; padding-bottom: .45rem; border-bottom: 1px solid var(--ink); }
+.contents ol { list-style: none; margin: 0; padding: 0; }
+.contents li { border-bottom: 1px solid var(--rule); }
+.contents a { display: grid; grid-template-columns: 1.6rem 1fr; padding: .5rem 0; text-decoration: none; }
+.contents a span:first-child { font-weight: 700; }
+.contents a.tool { font-weight: 600; }
+.contents a.tool span:first-child { color: var(--ox); }
+@media (min-width: 1000px) {
+  .title { grid-template-columns: minmax(0, 2.2fr) minmax(16rem, 1fr); column-gap: 3.5rem; align-items: end; }
+}
+
+/* ---------- exhibits ---------- */
+.ex {
+  display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 1.25rem;
+  border-top: 1px solid var(--ink); padding: 1.1rem 0 3.25rem;
+}
+.ex-no { font-size: .875rem; font-weight: 700; color: var(--ink); margin-bottom: .3rem; }
+.ex h2 { font-weight: 800; font-size: clamp(1.25rem, 2.1vw, 1.5rem); line-height: 1.25; letter-spacing: -.01em; margin: 0; max-width: 44ch; text-wrap: balance; }
+.ex-body { min-width: 0; }
+.ex-aside { font-family: var(--serif); font-size: 1.0625rem; line-height: 1.55; max-width: 62ch; }
+.ex-aside p + p { margin-top: .75rem; }
+.cap { font-size: .875rem; font-weight: 600; margin: 0 0 .6rem; }
+.cap + .cap { margin-top: -.4rem; }
+.src { font-size: .8125rem; color: var(--grey); margin-top: 1rem; max-width: 80ch; }
+.sub { margin-top: 2rem; }
+@media (min-width: 1000px) {
+  .ex { grid-template-columns: minmax(0, 2.2fr) minmax(16rem, 1fr); column-gap: 3.5rem; }
+  .ex-head { grid-column: 1 / -1; }
+  .ex-aside { grid-column: 2; grid-row: 2; padding-top: .15rem; }
+  .ex-body { grid-column: 1; grid-row: 2; }
+}
+
+/* ---------- interval charts (HTML, so text stays sharp at any width) ---------- */
+.fp { --cols: minmax(0, 15.5rem) minmax(0, 1fr) 4.2rem; }
+.fp.gbp { --cols: minmax(0, 14rem) minmax(0, 1fr) 4.2rem 4.6rem; }
+.fr, .fax { display: grid; grid-template-columns: var(--cols); column-gap: .9rem; align-items: center; }
+.fl { font-size: .875rem; line-height: 1.3; padding: .35rem 0; }
+.ft { position: relative; height: 2.3rem; }
+.fr .ft::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dotted var(--rule); }
+.tk { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--rule); }
+.tk.z { border-left-color: rgba(26, 26, 26, .55); }
+.ci {
+  position: absolute; top: 50%; height: 12px; transform: translateY(-50%); z-index: 1;
+  border-left: 2px solid currentColor; border-right: 2px solid currentColor;
+  background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
+}
+.pt { position: absolute; top: 50%; width: 13px; height: 13px; box-sizing: border-box; border-radius: 50%; border: 2.5px solid currentColor; background: var(--base); transform: translate(-50%, -50%); z-index: 2; }
+.fr.sig .pt { background: currentColor; }
+.fr { color: var(--grey); }
+.fr.key { color: var(--ink); }
+.fr.key .ci { background-size: 100% 3px; }
+.fr.key .pt { width: 15px; height: 15px; border-width: 3px; }
+.fr.sig { color: var(--ox); }
+.fr.sig .ci { background-size: 100% 3px; }
+.fr.sig .pt { width: 15px; height: 15px; }
+.fl { color: var(--ink); }
+.fr.key .fl, .fr.sig .fl { font-weight: 700; }
+.fv, .fg { font-size: .875rem; text-align: right; white-space: nowrap; }
+.fr.key .fv, .fr.sig .fv, .fr.sig .fg { font-weight: 800; }
+.fax { border-top: 1px solid var(--ink); }
+.fax .ft { height: 1.6rem; }
+.fax span.tl { position: absolute; top: .3rem; transform: translateX(-50%); font-size: .75rem; color: var(--grey); white-space: nowrap; }
+.fhd { font-size: .75rem; color: var(--grey); }
+.legend { font-size: .8125rem; margin-top: .7rem; display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; align-items: center; }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2.5px solid var(--ink); box-sizing: border-box; vertical-align: -1px; margin-right: .35rem; }
+.legend i.s { background: var(--ox); border-color: var(--ox); }
+.fhd .fv, .fhd .fg { font-size: .75rem; font-weight: 400; }
+@media (max-width: 40rem) {
+  .fp, .fp.gbp { --cols: minmax(0, 1fr) 3.6rem; }
+  .fp.gbp { --cols: minmax(0, 1fr) 3.6rem 4.2rem; }
+  .fl { grid-column: 1 / -1; padding: .55rem 0 0; }
+  .fax > span:first-child, .fhd > span:first-child { display: none; }
+}
+
+/* ---------- column charts ---------- */
+.cols { display: flex; align-items: flex-end; gap: 1.25rem; height: 10.5rem; border-bottom: 1px solid var(--ink); max-width: 30rem; }
+.cols.yrs { gap: .5rem; height: 7rem; max-width: 30rem; }
+.col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.col b { font-weight: 500; font-size: .875rem; text-align: center; margin-bottom: .25rem; }
+.col i { display: block; background: var(--tint); }
+.col.on i { background: var(--ink); }
+.col.on b { font-weight: 600; }
+.colx { display: flex; gap: 1.25rem; max-width: 30rem; font-size: .8125rem; margin-top: .35rem; }
+.colx.yrs { gap: .5rem; }
+.colx span { flex: 1; text-align: center; }
+.colx small { display: block; color: var(--grey); font-size: .75rem; }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 2rem; }
+@media (min-width: 720px) { .pair { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; } }
+
+/* ---------- comparables tool ---------- */
+.ts { border-top: 1px solid var(--ink); max-width: 34rem; }
+.tsr { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); align-items: baseline; padding: .55rem 0; border-bottom: 1px solid var(--rule); }
+.tsr > span { font-size: .875rem; color: var(--grey); }
+.fld { display: inline-flex; align-items: baseline; gap: .2rem; font-size: 16px; }
+.fld input, .fld select {
+  font: inherit; font-size: 16px; font-weight: 500; color: var(--ink); background: transparent;
+  border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; padding: .05rem .1rem; margin: 0;
+}
+.fld input { width: 6ch; text-align: right; }
+.fld select { appearance: none; -webkit-appearance: none; padding-right: 1.2rem; cursor: pointer;
+  background: linear-gradient(45deg, transparent 50%, var(--ink) 50%) calc(100% - .55rem) 55% / 5px 5px no-repeat,
+              linear-gradient(-45deg, transparent 50%, var(--ink) 50%) calc(100% - .25rem) 55% / 5px 5px no-repeat; }
+.fld input:focus, .fld select:focus { border-bottom-color: var(--ox); color: var(--ox); outline: none; }
+.fld input:focus-visible, .fld select:focus-visible { outline: 2px solid var(--ox); outline-offset: 2px; }
+.fld input::placeholder { color: var(--faint); font-weight: 400; }
+.hint { font-size: .875rem; color: var(--ox); min-height: 1.4em; margin-top: .5rem; }
+.answer { font-family: var(--serif); font-size: clamp(1.1875rem, 2vw, 1.375rem); line-height: 1.45; font-weight: 400; max-width: 44ch; margin-top: 1.25rem; }
+.answer b { font-family: var(--sans); font-weight: 800; color: var(--ox); }
+
+.strip { margin-top: 1.75rem; }
+.strip svg { display: block; width: 100%; height: 52px; overflow: visible; }
+.strip path { fill: none; vector-effect: non-scaling-stroke; shape-rendering: crispEdges; }
+.s-all { stroke: var(--tint); stroke-width: 1; }
+.s-comp { stroke: var(--ox); stroke-width: 2; }
+.s-med { stroke: var(--ox); stroke-width: 3; }
+.saxis { position: relative; height: 1.5rem; border-top: 1px solid var(--ink); }
+.saxis span { position: absolute; top: .3rem; transform: translateX(-50%); font-size: .75rem; color: var(--grey); }
+.saxis span:first-child { transform: none; }
+.saxis span:last-child { transform: translateX(-100%); }
+.skey { font-size: .8125rem; color: var(--grey); margin-top: .5rem; }
+
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 1.75rem; }
+table { width: 100%; border-collapse: collapse; font-size: .875rem; line-height: 1.4; }
+th, td { padding: .45rem .75rem .45rem 0; text-align: left; vertical-align: baseline; white-space: nowrap; }
+th:last-child, td:last-child { padding-right: 0; }
+thead th { font-weight: 600; font-size: .8125rem; color: var(--grey); border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+tbody td { border-bottom: 1px solid var(--rule); }
+.num { text-align: right; }
+td.co { max-width: 16rem; overflow: hidden; text-overflow: ellipsis; }
+th.co, td.co { position: sticky; left: 0; background: var(--base); }
+td.dx { font-weight: 600; }
+tfoot td, tfoot th { font-weight: 400; }
+tfoot tr:first-child > * { border-top: 1px solid var(--ink); padding-top: .55rem; }
+tfoot th { font-size: .8125rem; font-weight: 600; }
+tfoot tr.md > * { font-weight: 600; }
+tfoot tr.md td.dx { color: var(--ox); }
+.na { font-style: italic; }
+@media (max-width: 40rem) {
+  .mkt, .dt { display: none; }
+  table { font-size: .8125rem; }
+  thead th { white-space: normal; }
+  td.co { max-width: 10.5rem; }
+  th, td { padding-right: .5rem; }
+}
+
+/* reference table */
+table.ref th[scope=row] { font-weight: 400; }
+table.ref .grp { font-weight: 600; color: var(--ink); font-size: .875rem; border-bottom: 1px solid var(--rule); }
+table.ref td.m { font-weight: 600; }
+table.ref td.q, table.ref td.n { color: var(--grey); }
+table.ref .thin { font-weight: 400; font-style: italic; }
+table.ref tr.all > * { border-top: 1px solid var(--ink); }
+table.ref tr.all td.m { color: var(--ox); }
+table.ref .gap { width: 1.5rem; padding: 0; border-bottom-color: transparent; }
+
+/* ---------- method ---------- */
+.method { border-top: 3px solid var(--ink); padding-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+.method h2 { font-size: 1rem; font-weight: 800; margin: 0 0 .4rem; }
+.method p { font-family: var(--serif); font-size: .9375rem; line-height: 1.55; max-width: 60ch; }
+.method p + p { margin-top: .6rem; }
+@media (min-width: 900px) { .method { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 2.5rem; } }
+.foot { margin-top: 3rem; border-top: 1px solid var(--ink); padding-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; font-size: .875rem; }
+.foot p { max-width: 52ch; }
+.foot .g { color: var(--grey); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print { .ts, .hint { display: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="run"><span id="run-l">Rak Mohan | Independent ECM Project</span><span id="run-r"></span></div>
+
+<header class="title">
+  <div>
+    <h1>Busy ECM weeks don’t show up in UK placing discounts.</h1>
+    <p class="deck">An extra £0.43bn raised in other UK equity offerings in the week before launch, a typical busy week, moved placing discounts by about 1bp. A cost above 1.3pp is ruled out at 95% confidence. In this sample, deeper discounts go with an AIM listing and with raises that are large relative to the company.</p>
+    <p class="byline" id="byline"></p>
+  </div>
+  <nav class="contents" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#tool" class="tool"><span></span><span>Where would your deal price?</span></a></li>
+      <li><a href="#exhibit-1"><span>1</span><span>A busy week moved discounts by about 1bp</span></a></li>
+      <li><a href="#exhibit-2"><span>2</span><span>Why the raw numbers mislead</span></a></li>
+      <li><a href="#exhibit-3"><span>3</span><span>14 specifications and 4 subgroups</span></a></li>
+      <li><a href="#exhibit-4"><span>4</span><span>What does go with deeper discounts</span></a></li>
+      <li><a href="#exhibit-5"><span>5</span><span>Discounts by share of capital issued</span></a></li>
+      <li><a href="#method"><span></span><span>Method, data and terms</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<!-- Comparables tool: first thing a LinkedIn visitor sees -->
+<section class="ex tool-sec" id="tool">
+  <div class="ex-head"><p class="ex-no">Comparables tool</p>
+    <h2>Where would your deal price? Enter a deal to see the eight closest comparable placings.</h2></div>
+  <div class="ex-body">
+    <form class="ts" id="deal" autocomplete="off" onsubmit="return false">
+      <label class="tsr"><span>Market</span><span class="fld"><select id="seg"><option value="AIM">AIM</option><option value="MAIN">Main Market</option></select></span></label>
+      <label class="tsr"><span>Amount raised</span><span class="fld">£<input id="size" inputmode="decimal" value="25" aria-describedby="hint">m</span></label>
+      <label class="tsr"><span>New shares</span><span class="fld"><input id="pct" inputmode="decimal" value="15" placeholder="any">% of capital</span></label>
+      <label class="tsr"><span>Use of proceeds</span><span class="fld"><select id="use"><option value="">Any</option><option value="investment">Growth or acquisitions</option><option value="balance_sheet">Balance sheet repair</option><option value="other">Other</option></select></span></label>
+    </form>
+    <p class="hint" id="hint" role="status"></p>
+    <p class="answer" id="answer" aria-live="polite"></p>
+    <div class="strip">
+      <svg viewBox="0 0 1000 52" preserveAspectRatio="none" role="img" id="svg">
+        <path class="s-all" id="p-all"></path><path class="s-comp" id="p-comp"></path><path class="s-med" id="p-med"></path>
+      </svg>
+      <div class="saxis" id="saxis" aria-hidden="true"></div>
+      <p class="skey" id="skey"></p>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th class="co">Company</th><th class="dt">Launched</th><th class="mkt">Market</th><th class="num">Size £m</th><th class="num">New shares %</th><th class="num">Discount %</th></tr></thead>
+        <tbody id="rows"></tbody>
+        <tfoot id="summ"></tfoot>
+      </table>
+    </div>
+    <p class="src">Source: FCA National Storage Mechanism, LSE new issue statistics, market data; author’s analysis. Discount to last close before launch. n/a: share of capital not published.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Comparables are the eight placings on the same market closest in deal size and share of capital. If you pick a use of proceeds, placings with the same use rank as closer matches. Placings that did not publish their share of capital count as less similar.</p>
+    <p>Eight deals give a wide range, so read the 25th to 75th percentile rows as much as the median. This is a reference point from past deals, not a forecast or a pricing view, and it does not adjust for market conditions at the time.</p>
+  </div>
+</section>
+
+
+
+<!-- Exhibit 1 -->
+<section class="ex" id="exhibit-1">
+  <div class="ex-head"><p class="ex-no">Exhibit 1</p>
+    <h2>A typical busy week moved discounts by about 1bp. A cost above 1.3pp is ruled out at 95% confidence.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Change in discount per extra £0.43bn of UK equity supply (one within-month standard deviation), with 95% intervals</p>
+    <div class="fp" id="c1"></div>
+    <p class="legend"><span><i class="s"></i>Significant at 5%</span><span><i></i>Not significant</span><span>Lines: 95% intervals</span></p>
+    <p class="src">Source: FCA National Storage Mechanism, LSE new issue statistics, market data; author’s analysis. OLS with year-month, segment and industry fixed effects; standard errors clustered by week. n = 319.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Each deal is compared only with deals launched in the same calendar month, market (AIM or Main) and industry, controlling for deal size, share of capital, market moves and deal terms. The specification was fixed before the results were seen.</p>
+    <p>The placebo row is the check. </p>
+    <p>On a £30m raise the interval is about ±£0.4m. The data rule out a cost above 1.3pp, but not a smaller one.</p>
+  </div>
+</section>
+
+<!-- Exhibit 2 -->
+<section class="ex" id="exhibit-2">
+  <div class="ex-head"><p class="ex-no">Exhibit 2</p>
+    <h2>Raw, busy-week deals priced 0.7pp tighter. Most of them launched in 2020.</h2></div>
+  <div class="ex-body">
+    <div class="pair">
+      <div>
+        <p class="cap">Mean discount by supply in the five trading days before launch, deals split into thirds</p>
+        <div class="cols" id="c2a"></div><div class="colx" id="c2ax"></div>
+      </div>
+      <div>
+        <p class="cap">Share of each year’s deals that fall in the busiest third</p>
+        <div class="cols yrs" id="c2b"></div><div class="colx yrs" id="c2bx"></div>
+      </div>
+    </div>
+    <p class="src">Source: as Exhibit 1. Raw means, no controls. Supply relative to its 250-day average.</p>
+  </div>
+  <div class="ex-aside">
+    <p>The raw gap is 0.7pp and not significant (t = −0.45). It also points the wrong way for a congestion story: the busiest weeks priced slightly tighter.</p>
+    <p>“Busy” mostly means 2020. 62% of busy-third deals launched that year, and from 2023 almost none qualify. A raw split therefore compares years, not weeks, which is why Exhibit 1 compares each deal only with deals in the same month.</p>
+  </div>
+</section>
+
+<!-- Exhibit 3 -->
+<section class="ex" id="exhibit-3">
+  <div class="ex-head"><p class="ex-no">Exhibit 3</p>
+    <h2>All 14 specifications include zero, and no subgroup shows a cost the full sample hides.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Alternative specifications: change in discount per one within-month standard deviation of each supply measure, 95% intervals</p>
+    <div class="fp" id="c3a"></div>
+    <div class="sub">
+      <p class="cap">Subgroups: extra effect of a busy week within each group, relative to other deals</p>
+      <div class="fp" id="c3b"></div>
+    <p class="legend"><span><i class="s"></i>Significant at 5%</span><span><i></i>Not significant</span><span>Lines: 95% intervals</span></p>
+    </div>
+    <p class="src">Source: as Exhibit 1. Each row re-estimates the primary model with one change. Subgroup rows are interaction terms.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Changing the window, counting deals instead of pounds, dropping 2020, dropping flagged deals or using only discounts stated in announcements leaves every estimate inside the primary interval.</p>
+    <p>The subgroup tests ask whether a cost appears where it would be most likely: on AIM, in larger deals, in weak markets and in less liquid stocks. None does, but those intervals are wide. These are results where no effect was detected, not proof that there is none.</p>
+  </div>
+</section>
+
+<!-- Exhibit 4 -->
+<section class="ex" id="exhibit-4">
+  <div class="ex-head"><p class="ex-no">Exhibit 4</p>
+    <h2>An AIM listing and a larger raise relative to the company go with discounts 2 to 4pp deeper.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Change in discount in bp (positive is deeper) and in £ on the median £30m raise, 95% intervals</p>
+    <div class="fp gbp" id="c4"></div>
+    <p class="legend"><span><i class="s"></i>Significant at 5%</span><span><i></i>Not significant</span><span>Lines: 95% intervals</span></p>
+    <p class="src">Source: as Exhibit 1. Same model and controls. Associations, not causal estimates.</p>
+  </div>
+  <div class="ex-aside">
+    <p>Raw, AIM placings averaged a 10.6% discount against 5.6% on the Main Market. 391bp of that gap survives the controls, about £1.2m on a £30m raise.</p>
+    <p>Raises of 20% of share capital priced about 215bp deeper than raises of 8%. Deal size in pounds, once relative size is controlled for, is not significant.</p>
+    <p>Open offers priced 6.5pp deeper (p = 0.004). That result is exploratory and probably reflects the type of issuer that uses them.</p>
+  </div>
+</section>
+
+<!-- Exhibit 5 -->
+<section class="ex" id="exhibit-5">
+  <div class="ex-head"><p class="ex-no">Exhibit 5</p>
+    <h2>Median discounts rise with the share of capital issued.</h2></div>
+  <div class="ex-body">
+    <p class="cap">Discount to last close, %: median, interquartile range and number of deals, by new shares as % of existing capital</p>
+    <div class="scroll" style="margin-top:0">
+      <table class="ref" id="ref"></table>
+    </div>
+    <p class="src">Source: as Exhibit 1. Raw, no controls. * Fewer than five deals, indicative only.</p>
+  </div>
+  <div class="ex-aside">
+    <p>On AIM the median discount moves from 6.3% for raises of 10% of capital or less to 14.7% above 40%. Main Market cells above 20% hold fewer than five deals each.</p>
+    <p>116 of 319 deals did not publish their share of capital. They are shown separately rather than estimated.</p>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="method" id="method">
+  <div>
+    <h2>Method</h2>
+    <p>Discount: issue price against the last close before launch, using that day’s close for announcements after 16:35 and the previous day’s otherwise. A negative figure is a premium.</p>
+    <p>Supply: pounds raised in other UK equity offerings of £10m or more (placings, rights issues, open offers, IPOs) in the five trading days before launch, relative to its 250-day average. OLS with year-month, segment and industry fixed effects; errors clustered by week. Single-investor and controller-led deals are excluded.</p>
+  </div>
+  <div>
+    <h2>Data and checks</h2>
+    <p>Every deal was built from launch announcements on the FCA National Storage Mechanism and London Stock Exchange new issue statistics, including companies that have since delisted.</p>
+    <p>Every discount was recomputed from the announcement and the last close before launch. On the 124 deals where the company stated its own discount, the two agree with a correlation of 0.99.</p>
+  </div>
+  <div>
+    <h2>Limits</h2>
+    <p>Placings are pre-sounded, so a congestion cost may show in whether or how much is raised rather than in price; that is untested. All supply is weighted equally, though a £2bn rights issue and a £15m AIM raise draw on different books. Sell-downs are missing (no free source), which likely biases the estimate toward zero. The Main Market sample is thin after 2021.</p>
+    <p>Open question: shares returned 1.9pp less than the market over the 20 trading days after launch, per typical busy week (p = 0.14, not significant; companies still listed only).</p>
+  </div>
+    <div>
+    <h2>Terms used</h2>
+    <p><b>Placing:</b> a listed company selling new shares to investors, usually within a day. <b>Discount:</b> how far below the last market price the shares were sold. <b>bp:</b> a basis point, 0.01 percentage points; 100bp = 1pp. <b>AIM:</b> London’s market for smaller, growth companies; the Main Market is for larger ones. <b>Busy week:</b> an extra £0.43bn of other UK share sales in the week before launch, a typical swing. <b>95% interval:</b> the range the true effect very likely falls in. <b>Significant:</b> unlikely to be chance at the 5% level.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <p><b id="author">Rak Mohan</b>, BSc Computer Science (Economics minor), Lancaster University, 2027.<br>
+    <a href="https://www.linkedin.com/in/rak-mohan-856722238/">LinkedIn</a> &nbsp; <a href="UK_placings_note.pdf">One-page note (PDF)</a></p>
+  <p class="g" id="disclaim">Independent student research, not investment advice.</p>
+</footer>
+
+</div>
+<script>
+const DATA = /*__TOOL_DATA__*/null;
+const K = 8, LO = -10, HI = 40;
+const $ = id => document.getElementById(id);
+const MINUS = "\u2212";
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+/* Locked results (319-deal main sample). Rows: label, estimate, ci low, ci high, style */
+const EX1 = [["Prior week, all supply", .8, -131.6, 133.3, "key"], ["Next 10 days (placebo)", -9.8, -138.0, 118.3],
+  ["Prior week, same sector", -29.8, -232.6, 173.0], ["Prior week, other sectors", 13.7, -107.5, 134.9]];
+const EX3A = [["Primary: £ supply, prior 5 days", .8, -131.6, 133.3, "key"], ["£ supply, prior 10 days", 4.5, -137.0, 146.0],
+  ["Number of deals, prior 5 days", .2, -110.4, 110.8], ["Number of deals, prior 10 days", -69.6, -188.7, 49.5],
+  ["Log of supply", 18.6, -98.9, 136.1], ["Without winsorising", -1.2, -120.0, 117.7],
+  ["Fund and REIT raises removed from supply", -10.9, -155.8, 134.0], ["Excluding 2020 (n = 227)", -11.8, -134.7, 111.0],
+  ["Excluding 2026 (n = 293)", 3.8, -127.8, 135.4], ["Errors clustered by week and issuer", .8, -131.0, 132.7],
+  ["Excluding flagged deals (n = 298)", -40.6, -176.2, 95.0], ["Announcement-stated discounts only (n = 210)", -29.2, -206.5, 148.1],
+  ["Adding oversubscribed and upsized flags", -1.8, -135.4, 131.7], ["Adding same-day supply", .2, -132.1, 132.4]];
+const EX3B = [["On AIM", -74.2, -263.9, 115.5], ["Larger deals", 54.5, -164.7, 273.8],
+  ["Weak markets", -48.4, -318.7, 222.0], ["Less liquid stocks (n = 232)", 105.5, -161.8, 372.8]];
+const EX4 = [["AIM vs Main Market", 391, 139, 643, "sig", "£1.2m"], ["New shares 8% to 20% of capital", 215, 44, 386, "sig", "£0.65m"],
+  ["Deal size £15m to £98m", -89, -312, 134, "", MINUS + "£0.27m"], ["Busy week, +£0.43bn of supply", 1, -132, 133, "", "£0.00m"]];
+const RAW = [["Quiet", 9.16, 108], ["Middle", 8.56, 105], ["Busy", 8.50, 106]];
+const YRS = [[2019, 20], [2020, 72], [2021, 37], [2022, 10], [2023, 0], [2024, 0], [2025, 0], [2026, 4]];
+const REF = [ /* band, AIM [median, p25, p75, n], Main [median, p25, p75, n] */
+  ["10% or less", [6.3, 3.4, 9.8, 40], [4.2, .2, 5.9, 53]], ["10 to 20%", [7.0, 3.9, 14.5, 33], [5.1, 3.4, 8.5, 29]],
+  ["20 to 40%", [10.2, 4.9, 16.8, 28], [12.9, 10.4, 15.3, 2]], ["Over 40%", [14.7, 9.1, 27.7, 14], [21.3, 13.7, 29.6, 4]],
+  ["Not published", [9.0, 2.6, 14.0, 84], [5.8, 3.4, 7.9, 32]], ["All deals", [8.4, 3.8, 14.3, 199], [5.0, 2.4, 7.7, 120]]];
+
+const sgn = (v, d = 0) => (v > 0 ? "+" : v < 0 ? MINUS : "") + Math.abs(v).toFixed(d);
+const bp = v => sgn(Math.round(v) === 0 && v !== 0 ? Math.round(v) : Math.round(v)) + "bp";
+const f1 = v => (v < 0 ? MINUS : "") + Math.abs(v).toFixed(1);
+const num = s => { const v = parseFloat(String(s).replace(/[,£%\s]/g, "")); return isFinite(v) ? v : NaN; };
+const quant = (a, q) => { const s = [...a].sort((x, y) => x - y), i = (s.length - 1) * q, l = Math.floor(i);
+  return s[l] + (s[Math.min(l + 1, s.length - 1)] - s[l]) * (i - l); };
+const sd = a => { const m = a.reduce((x, y) => x + y, 0) / a.length;
+  return Math.sqrt(a.reduce((x, y) => x + (y - m) ** 2, 0) / (a.length - 1)) || 1; };
+const month = s => { const [y, m] = s.split("-"); return MON[+m - 1] + " " + y; };
+/* Company names arrive in capitals: set them in title case, keeping short acronyms (IQE, ITV) */
+const SMALL = new Set(["AND", "OF", "THE", "FOR", "IN", "ON", "&"]);
+const keep = w => w.includes("&") || w.length <= 2 || (w.length === 3 && !/[AEIOUY]/.test(w[1]));
+const nice = s => /[a-z]/.test(s) ? s : s.split(/(\s+)/).map((w, i) => /^\s+$/.test(w) ? w
+  : SMALL.has(w) || w === "CO" ? (i && w !== "CO" ? w.toLowerCase() : w.charAt(0) + w.slice(1).toLowerCase()) : keep(w) ? w : w.charAt(0) + w.slice(1).toLowerCase()).join("");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+function forest(el, rows, lo, hi, ticks, gbp) {
+  const x = v => ((Math.min(hi, Math.max(lo, v)) - lo) / (hi - lo) * 100).toFixed(2) + "%";
+  const tk = ticks.map(t => `<i class="tk${t === 0 ? " z" : ""}" style="left:${x(t)}"></i>`).join("");
+  let h = gbp ? `<div class="fax fhd" style="border:0"><span></span><span></span><span class="fv">bp</span><span class="fg">£</span></div>` : "";
+  h += rows.map(([lab, e, a, b, cls = "", g]) => `<div class="fr ${cls}"><span class="fl">${lab}</span>`
+    + `<span class="ft">${tk}<i class="ci" style="left:${x(a)};width:calc(${x(b)} - ${x(a)})"></i><i class="pt" style="left:${x(e)}"></i></span>`
+    + `<span class="fv">${bp(e)}</span>${gbp ? `<span class="fg">${g}</span>` : ""}</div>`).join("");
+  h += `<div class="fax" aria-hidden="true"><span></span><span class="ft">${ticks.map(t =>
+    `<span class="tl" style="left:${x(t)}">${t === 0 ? "0" : sgn(t)}</span>`).join("")}</span><span></span>${gbp ? "<span></span>" : ""}</div>`;
+  el.innerHTML = h;
+  el.setAttribute("role", "img");
+  el.setAttribute("aria-label", rows.map(r => `${r[0]}: ${bp(r[1])}, 95% interval ${bp(r[2])} to ${bp(r[3])}`).join("; "));
+}
+
+function columns(el, xl, rows, max, on, fmt, sub) {
+  el.innerHTML = rows.map(r => `<div class="col${on(r) ? " on" : ""}"><b>${fmt(r[1])}</b><i style="height:${(r[1] / max * 82).toFixed(1)}%"></i></div>`).join("");
+  xl.innerHTML = rows.map(r => `<span>${sub(r)}</span>`).join("");
+}
+
+function refTable() {
+  const cell = c => {
+    const thin = c[3] < 5, t = thin ? ' class="thin"' : "";
+    return `<td class="num m"><span${t}>${c[0].toFixed(1)}</span></td><td class="num q">${thin ? "too few" : c[1].toFixed(1) + " to " + c[2].toFixed(1)}</td><td class="num n">${c[3]}${thin ? "*" : ""}</td>`;
+  };
+  $("ref").innerHTML = `<thead><tr><th></th><th class="grp" colspan="3">AIM</th><th class="gap"></th><th class="grp" colspan="3">Main Market</th></tr>`
+    + `<tr><th>New shares, % of capital</th><th class="num">Median</th><th class="num">IQR</th><th class="num">n</th><th class="gap"></th><th class="num">Median</th><th class="num">IQR</th><th class="num">n</th></tr></thead><tbody>`
+    + REF.map(r => `<tr${r[0] === "All deals" ? ' class="all"' : ""}><th scope="row">${r[0]}</th>${cell(r[1])}<td class="gap"></td>${cell(r[2])}</tr>`).join("")
+    + "</tbody>";
+}
+
+function staticExhibits() {
+  forest($("c1"), EX1, -250, 250, [-200, 0, 200]);
+  forest($("c3a"), EX3A, -400, 400, [-300, 0, 300]);
+  forest($("c3b"), EX3B, -400, 400, [-300, 0, 300]);
+  forest($("c4"), EX4, -400, 700, [-300, 0, 300, 600], true);
+  columns($("c2a"), $("c2ax"), RAW, 10, r => r[0] === "Busy", v => v.toFixed(1) + "%", r => `${r[0]}<small>n = ${r[2]}</small>`);
+  columns($("c2b"), $("c2bx"), YRS, 80, r => r[0] === 2020, v => v + "%", r => "’" + String(r[0]).slice(2));
+  refTable();
+}
+
+function init() {
+  staticExhibits();
+  if (!DATA || !DATA.deals || !DATA.deals.length) {
+    $("answer").textContent = "This page has no deal data yet. Run scripts/10_tool_export.py to build it.";
+    return;
+  }
+  const D = DATA.deals;
+  DATA.sdSize = sd(D.map(d => Math.log(d.z)));
+  DATA.sdPct = sd(D.filter(d => d.p).map(d => Math.log(d.p)));
+  $("run-r").textContent = "Deals to " + DATA.asof;
+  $("byline").textContent = `Independent student research by ${DATA.author} on ${DATA.n} UK placings and accelerated bookbuilds of £10m or more, ${DATA.span}. Not investment advice.`;
+  $("author").textContent = DATA.author;
+  $("disclaim").textContent = `Independent student research, not investment advice. Deals to ${DATA.asof}.`;
+  $("p-all").setAttribute("d", D.map(d => `M${xOf(d.x).toFixed(1)} 14V40`).join(""));
+  $("saxis").innerHTML = [-10, 0, 10, 20, 30, 40].map(v => `<span style="left:${(v - LO) / (HI - LO) * 100}%">${v < 0 ? MINUS + Math.abs(v) : v}%</span>`).join("");
+  ["seg", "use"].forEach(id => $(id).addEventListener("change", update));
+  ["size", "pct"].forEach(id => {
+    $(id).addEventListener("input", update);
+    $(id).addEventListener("blur", () => { const v = num($(id).value);
+      if (isFinite(v) && v > 0) $(id).value = +v.toFixed(1); });
+  });
+  update();
+}
+const xOf = v => (Math.min(HI, Math.max(LO, v)) - LO) / (HI - LO) * 1000;
+
+function update() {
+  const seg = $("seg").value, use = $("use").value, mk = seg === "AIM" ? "AIM" : "Main Market";
+  const size = num($("size").value), pctRaw = $("pct").value.trim(), pct = num(pctRaw), hint = $("hint");
+  if (!(size > 0)) { hint.textContent = "Enter the amount raised in £ millions to find comparable placings."; return; }
+  if (pctRaw && !(pct > 0 && pct <= 500)) { hint.textContent = "Enter new shares as a percentage of capital above zero, or leave it blank."; return; }
+  hint.textContent = "";
+
+  let pool = DATA.deals.filter(d => d.s === seg);
+  if (pool.length < K) pool = DATA.deals;
+  const comps = pool.map(d => {
+    let sc = Math.abs(Math.log(d.z) - Math.log(size)) / DATA.sdSize;
+    if (pct > 0) sc += d.p ? Math.abs(Math.log(d.p) - Math.log(pct)) / DATA.sdPct : 1;
+    if (use && d.u !== use) sc += .75;
+    return { d, sc };
+  }).sort((a, b) => a.sc - b.sc || (b.d.t > a.d.t ? 1 : -1)).slice(0, K).map(o => o.d);
+
+  const xs = comps.map(d => d.x), med = quant(xs, .5), q1 = quant(xs, .25), q3 = quant(xs, .75);
+  $("answer").innerHTML = `The ${comps.length} closest ${mk} placings priced at a median discount of <b>${f1(med)}%</b>, with the middle half between ${f1(q1)}% and ${f1(q3)}%.`;
+  $("p-comp").setAttribute("d", comps.map(d => `M${xOf(d.x).toFixed(1)} 4V48`).join(""));
+  $("p-med").setAttribute("d", `M${xOf(med).toFixed(1)} 0V52`);
+  $("svg").setAttribute("aria-label", `Discounts of all ${DATA.n} placings, with the ${comps.length} comparables highlighted`);
+  $("skey").innerHTML = `Each light line is one of the ${DATA.n} placings; the red lines are the comparables and the thick red line is their median.${DATA.outside ? ` ${DATA.outside} placings outside ${MINUS}10% to 40% are drawn at the edge.` : ""}`;
+
+  $("rows").innerHTML = comps.map(d => `<tr><td class="co" title="${esc(nice(d.c))}">${esc(nice(d.c))}</td><td class="dt">${month(d.t)}</td>`
+    + `<td class="mkt">${d.s === "AIM" ? "AIM" : "Main"}</td><td class="num">${d.z.toLocaleString("en-GB", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</td>`
+    + `<td class="num${d.p ? "" : " na"}">${d.p ? d.p.toFixed(1) : "n/a"}</td><td class="num dx">${f1(d.x)}</td></tr>`).join("");
+  const zs = comps.map(d => d.z), ps = comps.filter(d => d.p).map(d => d.p);
+  const stat = (a, q) => a.length ? (q === 1 ? Math.max(...a) : q === 0 ? Math.min(...a) : quant(a, q)) : NaN;
+  const cellz = v => isFinite(v) ? v.toLocaleString("en-GB", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) : "n/a";
+  $("summ").innerHTML = [["High", 1], ["75th percentile", .75], ["Median", .5, "md"], ["25th percentile", .25], ["Low", 0]]
+    .map(([lab, q, cls]) => `<tr${cls ? ` class="${cls}"` : ""}><th class="co" scope="row">${lab}</th><td class="dt"></td><td class="mkt"></td>`
+      + `<td class="num">${cellz(stat(zs, q))}</td><td class="num">${isFinite(stat(ps, q)) ? stat(ps, q).toFixed(1) : "n/a"}</td><td class="num dx">${f1(stat(xs, q))}</td></tr>`).join("");
+}
+init();
+</script>
+</body>
+</html>
